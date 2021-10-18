@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "CV"
+title: "Publications and CV"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -15,7 +15,7 @@ Full [CV](http://ronaldolimajr.github.io/files/CV_RonaldoLimaJr.pdf){:target="_b
 
 ---
 
-#### Education
+## Education
 - **PhD in Linguistics**, University of Brasília, Brasília - Brazil, 2012
   - Title: The influence of age on the acquisition of six English vowels by Brazilian learners
 - **MA in Applied Linguistics**, University of Brasília, Brasília - Brazil, 2008
@@ -23,7 +23,7 @@ Full [CV](http://ronaldolimajr.github.io/files/CV_RonaldoLimaJr.pdf){:target="_b
 - **BA in English Language and Literature**, University of Brasília, Brasília - Brazil, 2006
 - **BA in English Language Teaching**, University of Brasília, Brasília - Brazil, 2006
 
-#### Experience
+## Experience
 
 - 2014--*current*: **Professor in Phonetics and Phonology** at the Federal University of Ceará, Fortaleza, Brazil, in the Department of English Language Studies
 - 2018--2019: **Visiting Researcher** at the Federal University of São Carlos, São Paulo, Brazil
