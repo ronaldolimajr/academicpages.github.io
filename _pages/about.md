@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I'm a Brazilian linguist currently working as a Professor of Phonetics and Phonology in the Department of English Language Studies at the [Federal University of Ceará](https://www.ufc.br){:target="_blank"}, in Brazil.
+I am a Brazilian linguist currently working as a Professor of Phonetics and Phonology in the Department of English Language Studies at the [Federal University of Ceará](https://www.ufc.br){:target="_blank"}, in Brazil.
 
 I have co-founded and currently direct the Laboratory of Phonetics and Multilingualism ([LabPhoM](https://labfom.ufc.br/){:target="_blank"}), and  my main research interests are in the phonetic-phonological development of non-native languages, especially using the tools of acoustic phonetics, and in quantitative data analysis.
 
