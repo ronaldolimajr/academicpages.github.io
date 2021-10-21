@@ -22,7 +22,7 @@ At the moment I am working on a longitudinal project analyzing the development o
 <br />
 
 
-## News:
+# News:
 
 I will co-host a special session during the **10th International Symposium on the Acquisition 
 of Second Language Speech [(New Sounds 2022)](https://www.ub.edu/newsounds2022/){:target="_blank"}** with Wander Lowie (University of Groningen) and Alejandra Pesantez (University of Zurich). The topic will be
