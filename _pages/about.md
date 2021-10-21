@@ -6,15 +6,6 @@ author_profile: true
 redirect_from: 
   - /about/
   - /about.html
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DHEBT7TKMG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-DHEBT7TKMG');
-</script>
 ---
 
 I am a Brazilian linguist currently working as a Professor of Phonetics and Phonology in the Department of English Language Studies at the [Federal University of Ceará](https://www.ufc.br){:target="_blank"}, in Brazil.
