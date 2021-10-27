@@ -10,11 +10,11 @@ author_profile: true
 
 - [Course plan](http://ronaldolimajr.github.io/files/analiseQuantDadosLing_programa_2021_2.pdf){:target="_blank"}
 
-- [Slides](https://www.dropbox.com/sh/ki9jh9yvu8isrq8/AABsmUY4U5njAOixXztEvnQDa?dl=0){:target="_blank"}
+- [Slides](https://github.com/ronaldolimajr/quantitative-data-analysis/tree/main/slides){:target="_blank"}
 
-- [Scripts](https://www.dropbox.com/sh/kvgza42dh6y9ubq/AACyo8MnRmdnfSvnE8Tdd8Ssa?dl=0){:target="_blank"}
+- [Scripts](https://github.com/ronaldolimajr/quantitative-data-analysis/tree/main/scripts){:target="_blank"}
 
-- [Data](https://www.dropbox.com/sh/13jj3jtnlspkv33/AADZDzNY5KG5rrT66xmCJEVAa?dl=0){:target="_blank"}
+- [Data](https://github.com/ronaldolimajr/quantitative-data-analysis/tree/main/data){:target="_blank"}
 
 - [Playlist with recordings of classes](https://youtube.com/playlist?list=PLzkA7H-mNfYhdbUe1e0FMpJDdLj1585zq){:target="_blank"}
 
