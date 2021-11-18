@@ -15,6 +15,9 @@ Below are a few books and tutorials available on-line to study quantitative data
 - Guilherme Garcia's tutorial [Introduction to data analysis using R](https://guilhermegarcia.github.io/rWorkshop/garcia_rWorkshop_complete.html){:target="_blank"}
 - Sonderegger's [Regression modeling for linguistic data](https://osf.io/pnumg/){:target="_blank"}
 - Roback & Legler's [Beyond Multiple Linear Regression](https://bookdown.org/roback/bookdown-BeyondMLR/){:target="_blank"}
+- Vasishth, Schad, Bürki & Kliegl's [Linear Mixed Models in Linguistics and Psychology: A Comprehensive Introduction](https://vasishth.github.io/Freq_CogSci/){:target="_blank"}
+- Nicenboim, Schad & Vasishth's [An Introduction to Bayesian Data Analysis for Cognitive Science](https://vasishth.github.io/bayescogsci/book/){:target="_blank"}
+- Johnson, Ott & Dogucu's [Bayes Rules! An Introduction to Bayesian Modeling with R](https://www.bayesrulesbook.com){:target="_blank"}
 
 **In Portuguese**
 
