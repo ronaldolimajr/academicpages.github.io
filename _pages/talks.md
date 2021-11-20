@@ -7,6 +7,8 @@ author_profile: true
 
 ### Workshops
 
+- **Second Language Acquisition** (Singularidades/Troika 2021)
+  - [Course material](https://www.dropbox.com/sh/d7a9yi49tvp3uiz/AABnkn5v-cGKuHpIxStSZngza?dl=0){:target="_blank"} - slides, recordings, texts
 - **Introduction to Regression Models for Linguists** (workshop 2020)
   - [Playlist](https://www.youtube.com/playlist?list=PL3Qku9eEGkK1TF274nuIva85i4RaeIvOw){:target="_blank"} with the recordings of all sessions
   - [Course material](https://www.dropbox.com/sh/h6w3qmoygq9hirf/AADxyv5YgrEO_0JJJaH4ZRhEa?dl=0){:target="_blank"} - slides, R scripts and datasets
