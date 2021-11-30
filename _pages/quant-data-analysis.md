@@ -22,6 +22,8 @@ author_profile: true
 
 - [Homework Activities](https://drive.google.com/drive/folders/1_GCqQwWAmzcB2HY5nAOBsY-J-Y7SMwc-?usp=sharing){:target="_blank"} (google forms)
 
+- [Sample Final Data Analysis](/sample-analysis/)
+
 ---
 
 Below you can watch the first video of the playlist and access the rest of the videos as well:
