@@ -10,7 +10,7 @@ author_profile: true
 #### Books
 - Kupske, F. F., U. K. Alves & **R. M. Lima Jr.** (2021) [Investigando os sons de línguas não nativas: uma introdução](https://editora.abralin.org/publicacoes/investigando-os-sons-de-linguas-nao-nativas/){:target="_blank"} *(Investigating the sounds of non-native languages: an introduction)*, Campinas-SP: Editora da Abralin.
 
-
+ 
 #### Selected Journal Publications
 
 - **Lima Jr., R. M.** & F. A. S. Araújo (*submitted*) Produção das vogais altas em sílabas postônicas finais no falar popular de fortalezenses *(Production of high vowels in final unstressed syllables in informal speech of Fortalezenses)*.
