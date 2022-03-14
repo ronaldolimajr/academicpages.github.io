@@ -7,6 +7,8 @@ author_profile: true
 
 ### Workshops
 
+- **Investigando os sons de línguas não nativas** (Curso de Verão da Abralin 2022)
+  - [Slides](/files/2022-Abralin-cap-1.pdf){:target="_blank"} da apresentação "*Introdução a pesquisas de sons não nativos*" 
 - **Second Language Acquisition** (Singularidades/Troika 2021)
   - [Course material](https://www.dropbox.com/sh/d7a9yi49tvp3uiz/AABnkn5v-cGKuHpIxStSZngza?dl=0){:target="_blank"} - slides, recordings, texts
 - **Introduction to Regression Models for Linguists** (workshop 2020)
