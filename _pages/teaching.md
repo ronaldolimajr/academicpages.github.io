@@ -5,6 +5,9 @@ permalink: /teaching/
 author_profile: true
 ---
 
+#### Course material for 2022.1 (Spring)
+- [English Phonetics and Phonology](https://youtube.com/playlist?list=PLzkA7H-mNfYjuQEAm5NPRdMtfdrF4mdJw){:target="_blank"} (BA in English Language Teaching)
+
 #### Course material for 2021.2 (Fall)
 
 - [Quantitative Analysis of Linguistic Data](https://ronaldolimajr.github.io/quant-data-analysis) (MA and PhD in Linguistics)
