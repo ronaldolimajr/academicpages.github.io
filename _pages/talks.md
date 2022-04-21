@@ -24,11 +24,11 @@ of Second Language Speech (New Sounds 2022)*
   - *I Seminário Internacional de Pesquisas em Ensino e Aprendizagem de Línguas: abordagens quantitativa e mista*
 - 2021 -- [Slides](https://ronaldolimajr.github.io/files/2021_interab_roundTable.pdf){:target="_blank"} and [Video](https://www.youtube.com/watch?v=-K4GGSkHsXo){:target="_blank"}: Second language speech data: challenges in creating a corpus of English-L2 speech for open access
   - Interab12--Round-table "Second language speech data: methodological possibilities and challenges"
-- 2021 -- Slides: [High Vowels in Unstressed Final Position in Fortalezenses Informal Speech](https://ronaldolimajr.github.io/files/vowelsInFortaleza.pdf){:target="_blank"} 
+- 2021 -- [Slides](https://ronaldolimajr.github.io/files/vowelsInFortaleza.pdf){:target="_blank"}: High Vowels in Unstressed Final Position in Fortalezenses Informal Speech 
   - 10th EICEFALA--International Meeting on Speech Sciences
-- 2020 -- Video: [Fonética ou fonologia, ou fonética e fonologia?](https://www.youtube.com/watch?v=-DJfiCY8hx8){:target="_blank"}
+- 2020 -- [Video](https://www.youtube.com/watch?v=-DJfiCY8hx8){:target="_blank"}: Fonética ou fonologia, ou fonética e fonologia?
   -  Seminários Linguísticos
-- 2020 -- Video: [Brazilian teachers and Brazilian learners: what model of English should be used?](https://www.youtube.com/watch?v=PAdDPtB0xsc){:target="_blank"}
+- 2020 -- [Video](https://www.youtube.com/watch?v=PAdDPtB0xsc){:target="_blank"}: Brazilian teachers and Brazilian learners: what model of English should be used?
   - Applied Linguistics Q&A
 
 <!--

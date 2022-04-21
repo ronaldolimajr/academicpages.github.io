@@ -6,7 +6,7 @@ author_profile: true
 ---
 
 #### Course material for 2022.1 (Spring)
-- **English Phonetics and Phonology** (BA in English Language Teaching)
+- English Phonetics and Phonology (BA in English Language Teaching)
     + [YouTube videos](https://youtube.com/playlist?list=PLzkA7H-mNfYjuQEAm5NPRdMtfdrF4mdJw){:target="_blank"}
     + [Slides](https://github.com/ronaldolimajr/englishPhonPhon){:target="_blank"}
 
