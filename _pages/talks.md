@@ -17,9 +17,10 @@ author_profile: true
 
 ### Talks
 
+- 2022 -- [Slides](/files/2022-webinarioBayes.pdf){:target="_blank"}: Inferência bayesiana de dados fonéticos
+  - *Webinário Unicamp*
 - 2022 -- [Slides](/files/2021-sem-ens-aprend-lgs-quant.pdf){:target="_blank"}: Bayesian hierarchical models as a path for analysis of individual and group data
-  - *10th International Symposium on the Acquisition 
-of Second Language Speech (New Sounds 2022)*
+  - *10th International Symposium on the Acquisition of Second Language Speech (New Sounds 2022)*
 - 2021 -- [Slides](/files/2021-sem-ens-aprend-lgs-quant.pdf){:target="_blank"} and [video](https://www.youtube.com/watch?v=feY5lCPYsYM){:target="_blank"}: A importância da análise quantitativa de dados em Linguística
   - *I Seminário Internacional de Pesquisas em Ensino e Aprendizagem de Línguas: abordagens quantitativa e mista*
 - 2021 -- [Slides](https://ronaldolimajr.github.io/files/2021_interab_roundTable.pdf){:target="_blank"} and [Video](https://www.youtube.com/watch?v=-K4GGSkHsXo){:target="_blank"}: Second language speech data: challenges in creating a corpus of English-L2 speech for open access
