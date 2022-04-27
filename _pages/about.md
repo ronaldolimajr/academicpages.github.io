@@ -24,12 +24,6 @@ At the moment I am working on a longitudinal project analyzing the development o
 
 # News:
 
-I will co-host a special session during the **10th International Symposium on the Acquisition 
-of Second Language Speech [(New Sounds 2022)](https://www.ub.edu/newsounds2022/){:target="_blank"}** with Wander Lowie (University of Groningen) and Alejandra Pesantez (University of Zurich). The topic will be
-> "Challenges and perspectives to incorporate both individual and group data analyses in second language speech research"
-
-***
-
 The book I co-organized about researching the sounds of non-native languages has been published!
 
 Kupske, F. F., U. K. Alves & **R. M. Lima Jr.** (2021) [Investigando os sons de línguas não nativas: uma introdução](https://editora.abralin.org/publicacoes/investigando-os-sons-de-linguas-nao-nativas/){:target="_blank"} *(Investigating the sounds of non-native languages: an introduction)*, Campinas-SP: Editora da Abralin.

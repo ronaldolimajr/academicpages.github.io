@@ -13,7 +13,8 @@ author_profile: true
  
 #### Selected Journal Publications
 
-- **Lima Jr., R. M.** & F. A. S. Araújo (*submitted*) Produção das vogais altas em sílabas postônicas finais no falar popular de fortalezenses *(Production of high vowels in final unstressed syllables in informal speech of Fortalezenses)*.
+- **Lima Jr., R. M.** & F. A. S. Araújo (*accepted*) Produção das vogais altas em sílabas postônicas finais no falar popular de fortalezenses *(Production of high vowels in final unstressed syllables in informal speech of Fortalezenses)*, *to appear in* Cadernos de Estudos Linguísticos.
+- Kupske, F. F & **R. M. Lima Jr,** (*accepted*) Integração a contextos de L2 dominantes e adaptabilidade fonológica de L1: uma análise da produção das plosivas surdas do português brasileiro *(Integration into L2-dominant contexts and L1 phonological adaptability: an analysis of the production of Brazilian Portuguese voiceless stops)*, *to appear in* Organon.
 - Oliveira, A. M., **R. M. Lima Jr.** & L. C. Berti (*accepted*) Articulatory gestures in children with speech sound disorders: ultrasound data, *to appear in* Fórum Linguístico.
 - Garcia, G, D. & **R. M. Lima Jr.** (2021) [Introdução à estatística bayesiana aplicada à linguística](https://revista.abralin.org/index.php/abralin/article/view/1914){:target="_blank"} *(Introduction to Bayesian statistics applied to linguistics)*, Revista da Abralin (Associação Brasileira de Linguística), 20(2):1-24.
 - Borges, A. A. S, W. L. P. Rodrigues Filho, A. R. S. Rocha, W. J. A. Carvalho, **R. M. Lima Jr.** & F. R. Barbosa (2021) [Automatic identification of synthetically genarated interlanguage transfer phenomena between Brazilian Portuguese (L1) and English (L2)](https://econtents.bc.unicamp.br/inpec/index.php/joss/article/view/15863), JOSS (Journal of Speech Sciences), 10(1):1-18.
