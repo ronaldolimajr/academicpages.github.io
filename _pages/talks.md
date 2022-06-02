@@ -17,6 +17,8 @@ author_profile: true
 
 ### Talks
 
+- 2022 -- [Slides](/files/2022-prosVarEnsino.pdf){:target="_blank"}: O ritmo do inglês-L2 para aprendizes brasileiros: pesquisa e ensino
+  - *II Jornada de Prosódia, Variação e Ensino*
 - 2022 -- [Slides](/files/2022-webinarioBayes.pdf){:target="_blank"}: Inferência bayesiana de dados fonéticos
   - *Webinário Unicamp*
 - 2022 -- [Slides](/files/2021-sem-ens-aprend-lgs-quant.pdf){:target="_blank"}: Bayesian hierarchical models as a path for analysis of individual and group data
