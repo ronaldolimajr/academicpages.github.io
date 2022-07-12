@@ -7,7 +7,7 @@ author_profile: true
 
 ### Course material for "Análise Quantitativa de Dados Linguísticos"
 
-*(under construction in 2021)*
+*(in Portuguese)*
 
 - [Course plan](http://ronaldolimajr.github.io/files/analiseQuantDadosLing_programa_2021_2.pdf){:target="_blank"}
 
