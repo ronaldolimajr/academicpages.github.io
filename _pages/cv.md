@@ -25,7 +25,8 @@ Full [CV](http://ronaldolimajr.github.io/files/CV_RonaldoLimaJr.pdf){:target="_b
 
 ## Experience
 
-- 2014--*current*: **Professor in Phonetics and Phonology** at the Federal University of Ceará, Fortaleza, Brazil, in the Department of English Language Studies
+- 2023--*current*: **Professor** at the University of Brasília, Brazil, in the Department of Linguistics, Portuguese and Classical Languages
+- 2014--2023: **Professor in Phonetics and Phonology** at the Federal University of Ceará, Fortaleza, Brazil, in the Department of English Language Studies
 - 2018--2019: **Visiting Researcher** at the Federal University of São Carlos, São Paulo, Brazil
 - 2002--2013: **Teacher of English as a Foreign Language** at the Binational Center Casa Thomas Jefferson, Brasília, Brazil
 
