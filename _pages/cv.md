@@ -40,7 +40,8 @@ Full [CV](http://ronaldolimajr.github.io/files/CV_RonaldoLimaJr.pdf){:target="_b
 
 #### Selected Journal Publications
 
-- Oliveira, A. M., **R. M. Lima Jr.** & L. C. Berti (*accepted*) Articulatory gestures in children with speech sound disorders: ultrasound data, *to appear in* Fórum Linguístico.
+- Coretta, S., J. V. CASILLAS, ... **R. M. Lima Jr.** *et al* (2023) [Multidimensional Signals and Analytic Flexibility: Estimating Degrees of Freedom in Human-Speech Analyses](https://journals.sagepub.com/doi/10.1177/25152459231162567). Advances In Methods And Practices In Psychological Science, 6.
+- Oliveira, A. M., **R. M. Lima Jr.** & L. C. Berti (2022) [Articulatory gestures in children with speech sound disorders: ultrasound data](https://periodicos.ufsc.br/index.php/forum/article/view/80489), Fórum Linguístico, 19(3).
 - **Lima Jr., R. M.** & F. A. S. Araújo (2022) [Produção das vogais altas em sílabas postônicas finais no falar popular de fortalezenses](https://periodicos.sbu.unicamp.br/ojs/index.php/cel/article/view/8665661) *(Production of high vowels in final unstressed syllables in informal speech of Fortalezenses)*, Cadernos de Estudos Linguísticos, 64.
 - Kupske, F. F & **R. M. Lima Jr,** (2022) [Integração a contextos de L2 dominantes e adaptabilidade fonológica de L1: uma análise da produção das plosivas surdas do português brasileiro](https://seer.ufrgs.br/index.php/organon/article/view/122646) *(Integration into L2-dominant contexts and L1 phonological adaptability: an analysis of the production of Brazilian Portuguese voiceless stops)*, Organon, 37(73):173--198.
 - Garcia, G, D. & **R. M. Lima Jr.** (2021) [Introdução à estatística bayesiana aplicada à linguística](https://revista.abralin.org/index.php/abralin/article/view/1914){:target="_blank"} *(Introduction to Bayesian statistics applied to linguistics)*, Revista da Abralin (Associação Brasileira de Linguística), 20(2):1--24.
