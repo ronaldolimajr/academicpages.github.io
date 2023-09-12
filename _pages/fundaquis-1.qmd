@@ -1,0 +1,98 @@
+---
+title: "Fundamentos de Aquisição da Linguagem"
+author: "Ronaldo Lima Jr."
+format: 
+  revealjs: 
+    theme: moon
+editor: visual
+---
+
+# Estágios de Aquisição
+
+## Primeiros meses de vida
+
+-   Balbucio gutural / arrulho (*cooing*)
+    -   Vocalizações sem significado
+-   Capacidade de identificação de línguas naturais
+
+## Balbucio Gutural {background-video="FundAquis-1_files\\1.Cooing.mp4"}
+
+## Balbucio Gutural {background-video="FundAquis-1_files\\2.Cooing.mp4"}
+
+## Balbucio Gutural <iframe width="560" height="315" src="https://www.youtube.com/embed/n8SuW4_BZcs?si=TNwqN48a5O39XgtT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## $\sim$ 6 meses
+
+-   Balbucio clássico (*babbling*)
+    -   ga-ga, ma-ma, pa-pa
+    -   $\rightarrow$ crianças surdas também balbuciam
+
+## Balbucio Clássico {background-video="FundAquis-1_files\\1.Babbling.mp4"}
+
+## $\sim$ 10 meses
+
+-   Balbucio apenas de sons que ouvem
+    -   usam acento e entonação de sua língua
+-   Mapeamento do som em busca de palavras/significado
+    -   prosódia, regularidades, restrições fonotáticas, etc.
+
+## Balbucio com Prosódia {background-video="FundAquis-1_files\\2.Babbling.mp4"}
+
+## $\sim$ 1 ano
+
+-   Capacidade de discriminar sons de qualquer língua cai
+-   Primeiras palavras
+    -   holófrases -- palavras com significado de enunciado (/eit/ = "quero leite")
+
+## Primeiras palavras {background-video="FundAquis-1_files\\3.firstWords.mp4"}
+
+## Primeiras palavras {background-video="FundAquis-1_files\\4.firstWords.mp4"}
+
+## $\sim$ 1:6
+
+-   Enunciados de 2 palavras isoladas ("auau água")
+    -   palavras isoladas com pausa
+-   Aumento veloz de vocabulário
+-   Compreensão da ordem de palavras
+    -   "Big Bird está lavando o Cookie Monster" vs "Cookie Monster está lavando o Big Bird"
+
+## $\sim$ 1:6 -- 2
+
+-   2 palavras em um mesmo contorno entonacional
+    -   "auau corre", "pega nenê", "mamãe nenê", "joga chão", etc.
+
+## 2--3 anos
+
+-   Sentenças simples com mais de 2 palavras
+    -   2 anos: poucas/sem palavras gramaticais
+    -   3 anos: começa a usar artigos e pronomes
+-   Aumento veloz de vocabulário
+    -   2 anos: $\sim$ 400 palavras
+    -   3 anos: $\sim$ 900 palavras
+-   Erros que demonstram reconhecimento de regras
+    -   "eu fazi", "eu trazi"
+
+## + 3 anos
+
+-   Mais palavras gramaticais
+-   Períodos coordenados e compostos
+    -   orações relativas
+    -   orações subordinadas temporais ("antes", "depois")
+-   Vocabulário
+    -   3:6: 1.200 palavras
+    -   4-5 anos: 1.900 palavras
+-   5 anos: praticamente todas construções encontradas na língua
+    -   orações relativas, clivadas, perguntas, passivas, etc.
+
+## Aquisição {background-video="FundAquis-1_files\\5.fullAcquisition.mp4"}
+
+## Aquisição {background-video="FundAquis-1_files\\6.fullAcquisition.mp4"}
+
+## Quando a aquisição termina?
+
+. . .
+
+-   Gírias
+-   Neologismos
+-   Termos técnicos
+-   Palavras menos frequentes
