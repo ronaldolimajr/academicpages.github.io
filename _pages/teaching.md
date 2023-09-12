@@ -5,7 +5,7 @@ permalink: /teaching/
 author_profile: true
 ---
 
-#### Graduate (MA \& PhD) courses and more!
+#### Graduate (MA \& PhD) courses
 - [Quantitative Analysis of Linguistic Data](https://ronaldolimajr.github.io/quant-data-analysis) (MA and PhD in Linguistics)
 - [Phonology, Variation and Teaching](http://ronaldolimajr.github.io/files/FonVarEns2021.1.pdf){:target="_blank"} (MA in Portuguese Language Teaching)
 
