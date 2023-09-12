@@ -5,7 +5,7 @@ permalink: /teaching/
 author_profile: true
 ---
 
-#### Graduate (MA \& PhD) courses
+#### Graduate (MA \& PhD) courses and more!
 - [Quantitative Analysis of Linguistic Data](https://ronaldolimajr.github.io/quant-data-analysis) (MA and PhD in Linguistics)
 - [Phonology, Variation and Teaching](http://ronaldolimajr.github.io/files/FonVarEns2021.1.pdf){:target="_blank"} (MA in Portuguese Language Teaching)
 
@@ -13,7 +13,7 @@ author_profile: true
 #### Undergraduate courses
 - Fundamentos de Aquisição de Primeira e de Segunda Língua
     + [Slides](/Fund-Aquis/)
-    
+
 - English Phonetics and Phonology (BA in English Language Teaching)
     + [YouTube videos](https://youtube.com/playlist?list=PLzkA7H-mNfYjuQEAm5NPRdMtfdrF4mdJw){:target="_blank"}
     + [Slides](https://github.com/ronaldolimajr/englishPhonPhon){:target="_blank"}
