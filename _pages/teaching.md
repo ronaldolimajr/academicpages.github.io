@@ -11,6 +11,9 @@ author_profile: true
 
 
 #### Undergraduate courses
+- Fundamentos de Aquisição de Primeira e de Segunda Língua
+    + [Slides](/Fund-Aquis/)
+    
 - English Phonetics and Phonology (BA in English Language Teaching)
     + [YouTube videos](https://youtube.com/playlist?list=PLzkA7H-mNfYjuQEAm5NPRdMtfdrF4mdJw){:target="_blank"}
     + [Slides](https://github.com/ronaldolimajr/englishPhonPhon){:target="_blank"}
