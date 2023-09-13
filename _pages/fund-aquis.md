@@ -19,7 +19,7 @@ author_profile: true
 - Hipótese do Período Crítico para L1
   + [Vídeo: Genie](https://dai.ly/x3i5x05){:target="_blank"} (documentário completo, sem legendas)
   + [Vídeo: Genie](https://youtu.be/wqflmQ5TaFQ?si=FCZq3eL24nMES3kh){:target="_blank"} (caso resumido, com opção de legendas)
-  + [slides](){:target="_blank"}
+  + slides
 
 
 <!--

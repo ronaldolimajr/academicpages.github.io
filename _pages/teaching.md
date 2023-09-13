@@ -8,30 +8,30 @@ author_profile: true
 ## Current: 
 
 #### Graduate (MA and PhD) courses
-- [Quantitative Analysis of Linguistic Data](https://ronaldolimajr.github.io/quant-data-analysis) (MA and PhD in Linguistics)
-- [Phonology](){:target="_blank"} (MA and PhD in Linguistics)
+- [Quantitative Analysis of Linguistic Data](/quant-data-analysis) (MA and PhD in Linguistics)
+- [Phonology]() (MA and PhD in Linguistics)
 
 
 #### Undergraduate courses
-- [Fundamentos de Aquisição de Primeira e de Segunda Língua](/fund-aquis/){:target="_blank"} (Português do Brasil como Segunda Língua)
+- [Fundamentos de Aquisição de Primeira e de Segunda Língua](/fund-aquis/) (Português do Brasil como Segunda Língua)
 
 
 ## Past
 
 #### Graduate (MA and PhD) courses
-- [Phonology, Variation and Teaching](http://ronaldolimajr.github.io/files/FonVarEns2021.1.pdf){:target="_blank"} (MA in Portuguese Language Teaching)
+- [Phonology, Variation and Teaching](/files/FonVarEns2021.1.pdf){:target="_blank"} (MA in Portuguese Language Teaching)
 
 
 #### Undergraduate courses
 - English Phonetics and Phonology (BA in English Language Teaching)
     + [YouTube videos](https://youtube.com/playlist?list=PLzkA7H-mNfYjuQEAm5NPRdMtfdrF4mdJw){:target="_blank"}
-    + [Slides](https://github.com/ronaldolimajr/englishPhonPhon){:target="_blank"}
+    + [Slides](/englishPhonPhon){:target="_blank"}
 
-- [English Segmental Phonology](http://ronaldolimajr.github.io/files/FonologiaSegmental2021.1.pdf){:target="_blank"} (BA in English Language Teaching)
+- [English Segmental Phonology](/files/FonologiaSegmental2021.1.pdf){:target="_blank"} (BA in English Language Teaching)
 
-- [English Suprasegmental Phonology](http://ronaldolimajr.github.io/files/FonSupra-programa-2021.2.pdf){:target="_blank"} (BA in English Language Teaching)
+- [English Suprasegmental Phonology](/files/FonSupra-programa-2021.2.pdf){:target="_blank"} (BA in English Language Teaching)
 
-- [English Phonetics and Phonology](http://ronaldolimajr.github.io/files/FonéticaFonologia2021.1.pdf){:target="_blank"} (BA in Portuguese and English Language Teaching)
+- [English Phonetics and Phonology](/files/FonéticaFonologia2021.1.pdf){:target="_blank"} (BA in Portuguese and English Language Teaching)
 
 <!--
 
