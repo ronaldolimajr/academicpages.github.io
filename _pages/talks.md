@@ -7,6 +7,10 @@ author_profile: true
 
 ### Workshops
 
+- 2023 -- **Visualização de dados em ggplot** (workshop on-line)
+  - [Slides](https://guilhermegarcia.github.io/ggplot2023/){:target="_blank"} do prmeiro dia 
+  - [Playlist](https://www.youtube.com/playlist?list=PL3Qku9eEGkK0FgvP3_Z0worKF-07KVcaq){:target="_blank"} do YouTube com gravação dos dois dias
+  - Demais [materiais](https://gdgarcia.ca/ggplot){:target="_blank"}
 - 2022 -- **Investigando os sons de línguas não nativas** (Curso de Verão da Abralin)
   - [Slides](/files/2022-Abralin-cap-1.pdf){:target="_blank"} da apresentação "*Introdução a pesquisas de sons não nativos*" 
 - 2021 -- **Second Language Acquisition** (Singularidades/Troika)

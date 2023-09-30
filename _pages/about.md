@@ -22,6 +22,3 @@ At the moment I am working on a project to analyze the rhythm of Portguese, Span
 
 <br />
 <br />
-
-
-# News:
