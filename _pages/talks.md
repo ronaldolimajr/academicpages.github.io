@@ -21,6 +21,8 @@ author_profile: true
 
 ### Talks
 
+- 2023 -- [Slides](/files/2023-AILA.pdf){:target="_blank"}: Development of Brazilian Portuguese (L3) vowels by an Argentinean learner: A Bayesian approach
+  - *AILA (International Association of Applied Linguistics) World Congress*
 - 2022 -- [Slides](/files/2022-prosVarEnsino.pdf){:target="_blank"}: O ritmo do inglês-L2 para aprendizes brasileiros: pesquisa e ensino
   - *II Jornada de Prosódia, Variação e Ensino*
 - 2022 -- [Slides](/files/2022-webinarioBayes.pdf){:target="_blank"}: Inferência bayesiana de dados fonéticos
