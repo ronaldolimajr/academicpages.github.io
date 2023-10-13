@@ -13,6 +13,8 @@ author_profile: true
   - Demais [materiais](https://gdgarcia.ca/ggplot){:target="_blank"}
 - 2022 -- **Investigando os sons de línguas não nativas** (Curso de Verão da Abralin)
   - [Slides](/files/2022-Abralin-cap-1.pdf){:target="_blank"} da apresentação "*Introdução a pesquisas de sons não nativos*" 
+- 2022 -- **Instrução Explícita** (Curso de Verão da Abralin)
+  - [Slides](/files/2022-Abralin-InstrExpl.pdf){:target="_blank"} da apresentação "*Introdução a pesquisas de sons não nativos*" 
 - 2021 -- **Second Language Acquisition** (Singularidades/Troika)
   - [Course material](https://www.dropbox.com/sh/d7a9yi49tvp3uiz/AABnkn5v-cGKuHpIxStSZngza?dl=0){:target="_blank"} - slides, recordings, texts
 - 2020 -- **Introduction to Regression Models for Linguists** 
