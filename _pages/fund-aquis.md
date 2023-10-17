@@ -23,7 +23,7 @@ Página com o material da disciplina **Fundamentos de Aquisição de Primeira e 
   + [Vídeo: Helen Keller](https://youtu.be/8ch_H8pt9M8?si=b65__vf7JKsXUyP1){:target="_blank"}
 - Teorias de Aquisição (de primeira língua)
   + [slides](/FundAquis/slides/FundAquis-2/FundAquis-2.html){:target="_blank"} (*on-line*)
-  + slides (pdf)
+  + [slides](/files/FundAquis-2.pdf){:target="_blank"} (pdf)
 
 
 *Última atualização: 2023.2*
