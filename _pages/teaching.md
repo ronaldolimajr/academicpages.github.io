@@ -9,7 +9,9 @@ author_profile: true
 
 #### Graduate (MA and PhD) courses
 - [Quantitative Analysis of Linguistic Data](/quant-data-analysis) (MA and PhD in Linguistics)
-- [Phonology]() (MA and PhD in Linguistics)
+- Phonology (MA and PhD in Linguistics)
+  + [Drive Folder](https://unbbr-my.sharepoint.com/:f:/g/personal/chacon_unb_br/EnEWvRRhgyBBv5NCccg9cGQBK9w60KuQ9mGAFG768qw74A?e=P5QoDJ){:target="_blank"}
+  + [Slides](/files/PPGL-Fonologia-FonFon.pdf){:target="_blank"} for "Fonética e Fonologia; Fonema; Fonêmica"
 
 
 #### Undergraduate courses
