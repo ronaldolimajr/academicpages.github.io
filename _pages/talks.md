@@ -8,7 +8,7 @@ author_profile: true
 ### Workshops
 
 - 2023 -- **Visualização de dados em ggplot** (workshop on-line)
-  - [Slides](https://guilhermegarcia.github.io/ggplot2023/){:target="_blank"} do prmeiro dia 
+  - [Slides](https://guilhermegarcia.github.io/ggplot2023/){:target="_blank"}  
   - [Playlist](https://www.youtube.com/playlist?list=PL3Qku9eEGkK0FgvP3_Z0worKF-07KVcaq){:target="_blank"} do YouTube com gravação dos dois dias
   - Demais [materiais](https://gdgarcia.ca/ggplot){:target="_blank"}
 - 2022 -- **Investigando os sons de línguas não nativas** (Curso de Verão da Abralin)
@@ -23,6 +23,8 @@ author_profile: true
 
 ### Talks
 
+- 2023 -- [Slides](/files/2023-sem-ens-aprend-lgs-quant.pdf){:target="_blank"}: Tópicos atuais em análise quantitativa de dados para pesquisas em ensino e aprendizagem de línguas
+  - *II Seminário Internacional de Pesquisas em Ensino e Aprendizagem de Línguas: abordagens quantitativa e mista*
 - 2023 -- [Slides](/files/2023-AILA.pdf){:target="_blank"}: Development of Brazilian Portuguese (L3) vowels by an Argentinean learner: A Bayesian approach
   - *AILA (International Association of Applied Linguistics) World Congress*
 - 2022 -- [Slides](/files/2022-prosVarEnsino.pdf){:target="_blank"}: O ritmo do inglês-L2 para aprendizes brasileiros: pesquisa e ensino
