@@ -12,6 +12,8 @@ Página com o material da disciplina **Fundamentos de Aquisição de Primeira e 
 
 ### Slides e vídeos
 
+#### Parte 1
+
 - Linguagem humana vs comunicação animal
   + [vídeo: dança das abelhas](https://www.youtube.com/watch?v=bFDGPgXtK-U&t=6s){:target="_blank"}
 - Estágios de aquisição de L1
@@ -25,6 +27,11 @@ Página com o material da disciplina **Fundamentos de Aquisição de Primeira e 
   + [slides](/FundAquis/slides/FundAquis-2/FundAquis-2.html){:target="_blank"} (*on-line*)
   + [slides](/files/FundAquis-2.pdf){:target="_blank"} (pdf)
 
+#### Parte 2
+
+- Teorias de Aquisição de Segunda Língua
+  + [slides](/FundAquis/slides/FundAquis-3/FundAquis-3.html){:target="_blank"} (*on-line e em construção*)
+  + *slides em pdf em breve*
 
 *Última atualização: 2023.2*
 
