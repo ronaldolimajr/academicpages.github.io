@@ -5,7 +5,7 @@ permalink: /fund-aquis/
 author_profile: true
 ---
 
-Página com o material da disciplina **Fundamentos de Aquisição de Primeira e de Sgunda Língua**, ministrada para o curso de PBSL (Português do Brasil como Segunda Língua) da Universidade de Brasília
+Página com o material da disciplina **Fundamentos de Aquisição de Primeira e de Segunda Língua**, ministrada para o curso de PBSL (Português do Brasil como Segunda Língua) da Universidade de Brasília
 
 ### OneDrive
 - [Pasta](https://unbbr-my.sharepoint.com/:f:/g/personal/ronaldo_junior_unb_br/Ep2r7XBBiLRDsaC2Cnmxr7EBoRV-oDsjkSjeFOCP46HFHw?e=2gWPsU){:target="_blank"} com plano de aula e materiais do curso
@@ -26,6 +26,8 @@ Página com o material da disciplina **Fundamentos de Aquisição de Primeira e 
 - Teorias de Aquisição (de primeira língua)
   + [slides](/FundAquis/slides/FundAquis-2/FundAquis-2.html){:target="_blank"} (*on-line*)
   + [slides](/files/FundAquis-2.pdf){:target="_blank"} (pdf)
+- Vídeo de revisão
+  + [Language Crash Course](https://youtu.be/s9shPouRWCs?si=cP3Fgc4LBUFP-W9L){:target="_blank"}
 
 #### Parte 2
 
