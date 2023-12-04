@@ -32,8 +32,9 @@ Página com o material da disciplina **Fundamentos de Aquisição de Primeira e 
 #### Parte 2
 
 - Teorias de Aquisição de Segunda Língua
-  + [slides](/FundAquis/slides/FundAquis-3/FundAquis-3.html){:target="_blank"} (*on-line e em construção*)
-  + *slides em pdf em breve*
+  + [slides](/FundAquis/slides/FundAquis-3/FundAquis-3.html){:target="_blank"} (*on-line*)
+  + [slides](/files/FundAquis-3.pdf){:target="_blank"} (pdf)
+  + [slides de Teoria de Sistemas Dinâmicos Complexos](/files/FundAquis-4.pdf){:target="_blank"} (pdf)
 
 *Última atualização: 2023.2*
 
