@@ -23,6 +23,9 @@ author_profile: true
 
 ### Talks
 
+
+- 2024 -- [Slides](/files/NUPFFALE2024/NUPFFALE-slides/NUPFFALE-slides.html){:target="_blank"}: Ponderando a pertinência do *p*: problemas e precauções (na análise de dados **ph**onéticos)
+  - *5th Biannual Meeting of the NUPFFALE Research Group*
 - 2023 -- [Slides](/files/2023-sem-ens-aprend-lgs-quant.pdf){:target="_blank"}: Tópicos atuais em análise quantitativa de dados para pesquisas em ensino e aprendizagem de línguas
   - *II Seminário Internacional de Pesquisas em Ensino e Aprendizagem de Línguas: abordagens quantitativa e mista*
 - 2023 -- [Slides](/files/2023-AILA.pdf){:target="_blank"}: Development of Brazilian Portuguese (L3) vowels by an Argentinean learner: A Bayesian approach

@@ -1,0 +1,792 @@
+---
+title: "Ponderando a pertinência do *p*: problemas e precauções"
+subtitle: "(na análise de dados **ph**onéticos)"
+format: clean-revealjs
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+author:
+  - name: "Ronaldo Lima Jr."
+    orcid: 
+    email: "ronaldo.junior@unb.br"
+    affiliations: "Universidade de Brasília | CNPq "
+date: ""
+---
+
+##
+![](figs/capa-freddie.jpg){height=5in}
+
+["I want to break *p*"]{.fg style="--col: #e64173"}
+
+## Objetivo da análise quantitativa
+
+O grande problema do pesquisador, e consequente objetivo da estatística inferencial, é inferir [____________]{.fg style="--col: #e64173"} (desconhecidos) de uma [____________]{.fg style="--col: #e64173"} com base nos [____________]{.fg style="--col: #2E86C1"} (conhecidos) de uma [____________]{.fg style="--col: #2E86C1"}.	
+
+## Objetivo da análise quantitativa
+
+O grande problema do pesquisador, e consequente objetivo da estatística inferencial, é inferir [parâmetros]{.fg style="--col: #e64173"} (desconhecidos) de uma [população]{.fg style="--col: #e64173"} com base nos [dados]{.fg style="--col: #2E86C1"} (conhecidos) de uma [amostra]{.fg style="--col: #2E86C1"}.	
+
+. . .
+
+- Muita responsabilidade!
+
+## {background-image="figs/meme-pvalue-PhD.png"}
+
+
+## O que é o valor de *p*?
+
+. . .
+
+É a [p____________]{.fg style="--col: #e64173"} de se observar dados [____________]{.fg style="--col: #e64173"} que os coletados caso a [h____________]{.fg style="--col: #e64173"} seja [____________]{.fg style="--col: #e64173"}.
+
+## O que é o valor de *p*?
+
+É a [probabilidade]{.fg style="--col: #e64173"} de se observar dados [tão ou mais extremos]{.fg style="--col: #e64173"} que os coletados caso a [hipótese nula]{.fg style="--col: #e64173"} seja [verdadeira]{.fg style="--col: #e64173"}.
+
+
+## Exemplo ![](figs/moeda.png){height=0.5in} 
+
+- Jogo de cara ou coroa
+- Cara eu ganho, coroa você ganha
+
+:::{.incremental}
+- Qual é a probabilidade de **uma moeda justa** cair cara?
+  - Chance de 1:2 $\rightarrow$ $1/2 = 0.5$ $\rightarrow$ $50\%$
+- Qual é a probabilidade de caírem 3 caras em 3 jogadas **se a moeda for justa**?
+  - Opções: Ca-Ca-Ca, Ca-Ca-CO, Ca-CO-Ca, Ca-CO-CO, CO-Ca-Ca, CO-Ca-CO, CO-CO-Ca, CO-CO-CO 
+  - 8 opções $\rightarrow$ $1/8 = 0.125$ $\rightarrow$ probabilidade de 12,5\% de caírem 3 caras em 3 jogadas **se a moeda for justa**
+:::
+
+## 
+
+| Opção | Caras | *p* |
+|----------|---|-------|
+| Ca-Ca-Ca | 3 | 0.125 |
+| Ca-Ca-CO | 2 | 0.125 |
+| Ca-CO-Ca | 2 | 0.125 |
+| Ca-CO-CO | 1 | 0.125 |
+| CO-Ca-Ca | 2 | 0.125 |
+| CO-Ca-CO | 1 | 0.125 |
+| CO-CO-Ca | 1 | 0.125 |
+| CO-CO-CO | 0 | 0.125 |
+: {tbl-colwidths="[20,20]"}
+
+:::{.incremental}
+- Qual é a probabilidade de caírem 2 caras?
+  - $0.125 \times 3 = 0.375 \rightarrow 37.5\%$ 
+- E de caírem 2 ou mais caras?
+  - $0.125 \times 4 = 0.5 \rightarrow 50\%$
+:::
+
+## 
+![3 jogadas](figs/binom3){width=70% fig-align="center"} 
+
+## 
+![6 jogadas](figs/binom6){width=70% fig-align="center"} 
+
+## 
+![12 jogadas](figs/binom12){width=70% fig-align="center"} 
+
+## 
+![50 jogadas](figs/binom50){width=70% fig-align="center"} 
+
+## 
+![100 jogadas](figs/binom100){width=70% fig-align="center"} 
+
+##
+::: {.incremental}
+- Se cara eu ganho e caem 100 caras em 100 jogadas, o que você **deduz**?
+  - Ronaldo está roubando -- a moeda é adulterada
+- E se caírem 99 ou 100 caras?
+- E se caírem 98 ou mais caras?
+- E se caírem 90 ou mais caras?
+- 50?
+- 51? 
+
+::: 
+
+::: {.incremental}
+- Qual é o seu limite? A partir de quantas caras em 100 jogadas você **deduziria** que estou roubando? [escreva este número]{.bg style="--col: #e64173"}.
+  - $H_0$: Ronaldo não está roubando -- a moeda é justa
+  - $H_1$: Ronaldo está roubando -- a moeda é adulterada
+  
+::: 
+
+## 
+
+:::{.incremental}
+- Qual é a probabilidade de caírem 90 ou mais caras em 100 jogadas?
+  - `sum(dbinom(90:100, 100, 0.5))`
+  - `1.531645e-17` $\rightarrow 0.000000000000001531645\%$ 
+:::
+
+. . . 
+
+![](figs/binom100-90){width=70% fig-align="center"} 
+
+##
+- Qual é a menor probabilidade que deveríamos usar para **inferir** que a $H_0$ é falsa? 
+- Quão pequena deve ser a probabilidade de aparecerem tantas caras assim a ponto de você **inferir** que estou roubando e que a moeda é adulterada? 
+
+. . .
+
+- Tradicionalmente: $5\%$ ($p < 0.05$)
+
+. . .
+
+- A partir de quantas caras em 100 jogadas a probabilidade de aparecer essa quantidade de caras ou mais é menor que $5\%$?
+
+. . .
+
+```{r}
+#| echo: true
+sum(dbinom(58:100, 100, 0.5))
+sum(dbinom(59:100, 100, 0.5))
+```
+
+##
+![](figs/binom100-58){width=70% fig-align="center"} 
+
+. . . 
+
+- O seu [número anotado]{.bg style="--col: #e64173"} de quantidade de caras a partir da qual você **deduziria** que estou roubando foi maior que 59? 
+  - Se sim, você foi mais rígido que a tradição **arbitrária** de $p<0.05$
+
+## O que é o valor de *p*?
+
+. . . 
+
+- É a [probabilidade]{.fg style="--col: #e64173"} de se observar dados [tão ou mais extremos]{.fg style="--col: #e64173"} que os coletados caso a [hipótese nula]{.fg style="--col: #e64173"} seja [verdadeira]{.fg style="--col: #e64173"}.
+
+## O que **NÃO** é o valor de *p*?
+
+:::{.incremental}
+- **não** é a probabilidade da $H_0$ ser verdadeira (é a probabilidade dos dados diante da $H_0$)
+- **não** prova que a $H_1$ seja verdadeira, apenas indica a decisão de rejeitar a $H_0$ (e aceitar, por responsabilidade do pesquisador, a $H_1$)
+- **não** indica a magnitude ou importância de um efeito -- um *p* muito baixo não indica um efeito muito alto
+  - consequentemente, **não** existe valor de *p* "marginalmente significativo" ou "aproximando significância" 
+  - $p = 0.06$ **não** indica tendência de efeito/de diferença
+:::
+
+
+## 5 críticas ao valor de *p* 
+(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015)
+
+1. [decisão categórica que valor de *p* impõe]{.bg style="--col: #FADBD8"}
+
+
+## {background-image="figs/meme-pavalue-fighter.png"}
+
+
+## 5 críticas ao valor de *p* 
+(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015)
+
+1. decisão categórica que valor de *p* impõe
+2. [arbitrariedade do 0,05 como valor limite para decisão]{.bg style="--col: #FADBD8"}
+
+
+## 2. Arbitrariedade de $\alpha = 0.05$
+
+:::{.incremental}
+- Basta diminuir $\alpha$?
+  - Quanto menor o $\alpha$, menor as chances de Erro de **Tipo I**, mas maior as chances de Erro de **Tipo II**
+:::
+
+## 5 críticas ao valor de *p* 
+(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015)
+
+1. decisão categórica que valor de *p* impõe
+2. arbitrariedade do 0,05 como valor limite para decisão
+3. [possibilidade de se manipular os dados a fim de se alcançar um valor de *p* abaixo de 0,05 (*p-hacking*)]{.bg style="--col: #FADBD8"}
+
+
+## 3. *p-hacking*
+
+1. Por falta de conhecimento
+
+## {background="#151f2b"}
+
+![](figs/meme-p1.png){fig-align="center" width=80%}
+
+## {background="#151f2b"}
+
+![](figs/meme-p2.jpeg){fig-align="center" width=80%}
+
+## 3. *p-hacking*
+
+- Por falta de conhecimento 
+  - Teste unicaudal vs bicaudal
+
+## 3. *p-hacking*
+
+- Por falta de conhecimento 
+  - Teste unicaudal vs bicaudal
+  - *HARKing*
+
+## 3. *p-hacking*
+
+- Por falta de conhecimento 
+  - Teste unicaudal vs bicaudal
+  - *HARKing*
+  - Comparações pareadas múltiplas
+  
+##
+![](figs/significant01){fig-align="center" width=80%}
+
+##
+![](figs/significant02){fig-align="center" width=80%}
+
+##
+![](figs/significant03){fig-align="center" width=80%}
+
+## 3. *p-hacking*
+
+- Por falta de conhecimento 
+  - Teste unicaudal vs bicaudal
+  - *HARKing*
+  - Comparações pareadas múltiplas
+  - Coletas múltiplas (mesmo indivíduo, mesmo item, etc.)
+  
+##
+![](figs/mixed-cartoon){width=80%}
+
+## 3. *p-hacking*
+- Por falta de conhecimento 
+  - Teste unicaudal vs bicaudal
+  - *HARKing*
+  - Comparações pareadas múltiplas
+  - Coletas múltiplas (mesmo indivíduo, mesmo item, etc.)
+
+- Por decisões do pesquisador $\rightarrow$ Vide [Lima Jr. e Garcia (2021)](https://revista.abralin.org/index.php/abralin/article/view/1790)
+
+## {background-iframe="https://revista.abralin.org/index.php/abralin/article/view/1790"}
+
+## 3. *p-hacking*
+- Por falta de conhecimento 
+  - Teste unicaudal vs bicaudal
+  - *HARKing*
+  - Comparações pareadas múltiplas
+  - Coletas múltiplas (mesmo indivíduo, mesmo item, etc.)
+
+- Por decisões do pesquisador $\rightarrow$ Vide Lima Jr. e Garcia (2021)
+
+- Por conduta antiética 
+
+## {background-iframe="https://projects.fivethirtyeight.com/p-hacking/"}
+
+
+## 5 críticas ao valor de *p* 
+(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015)
+
+1. decisão categórica que valor de *p* impõe
+2. arbitrariedade do 0,05 como valor limite para decisão
+3. possibilidade de se manipular os dados a fim de se alcançar um valor de *p* abaixo de 0,05 (*p-hacking*)
+4. [existência de estudos com valor de *p* abaixo de 0,05 mas com baixo poder estatístico e/ou baixo tamanho de efeito]{.bg style="--col: #FADBD8"}
+
+
+
+## Simular população de 100 mil alunos com seus resultados em um teste {auto-animate="true"}
+
+``` r
+population = rbeta(100000, 5, 2)
+```
+
+## Simular população de 100 mil alunos com seus resultados em um teste {auto-animate="true"}
+
+``` r
+population = rbeta(100000, 5, 2)
+
+mean(population)
+sd(population)
+
+hist(population)
+```
+
+##
+
+```{r}
+library(tidyverse)
+library(DT)
+
+# Simular uma população de 100 mil alunos com seus resultados em um teste
+set.seed(1)
+population = rbeta(100000, 5, 2)
+
+hist(population)
+```
+
+```{r}
+#| echo: true
+
+mean(population)
+sd(population)
+```
+
+## Extrair amostras -- 3 turmas de 20 aprendizes cada
+
+```r
+sample1 = sample(x = population, size = 20)
+sample2 = sample(x = population, size = 20)
+sample3 = sample(x = population, size = 20)
+```
+</br>
+
+. . . 
+
+::: columns
+::: {.column width="30%"}
+
+```{r}
+set.seed(4)
+sample1 = sample(x = population, size = 20)
+sample2 = sample(x = population, size = 20)
+sample3 = sample(x = population, size = 20)
+
+# Criar um tibble (data frame) com os dados das 3 turmas simuladas (samples)
+sample.data = tibble(class1 = sample1,
+                     class2 = sample2,
+                     class3 = sample3) %>% 
+  gather("class1", "class2", "class3", key = class, value = test)
+
+# TAbela com médias e desvios-padrão
+knitr::kable(sample.data %>% 
+               group_by(class) %>% 
+               summarize(mean = mean(test),
+                         SD = sd(test)), 
+             digits = 2)
+```
+
+:::
+
+::: {.column width="70%"}
+
+
+```{r}
+# Gerar gráfico
+ggplot(sample.data, aes(x = class, y = test)) +
+  geom_boxplot() +
+  stat_summary(color = "blue") +
+  theme_minimal()
+```
+
+:::
+:::
+
+## ANOVA
+
+```{r}
+#| echo: true
+#| output-location: fragment
+ 
+summary(aov(data = sample.data, test ~ class))
+```
+
+. . .
+
+Porém...
+
+```{r}
+#| echo: true
+#| output-location: fragment
+ 
+TukeyHSD(aov(data = sample.data, test ~ class))
+```
+
+## Qual é o poder estatístico* dessa análise?
+\* Valor de 0--1 que indica a probabilidade de identificar um efeito caso esteja presente
+
+. . .
+
+- A análise do poder estatístico (de uma ANOVA) envolve 5 valores: 
+  - $k$: a quantidade de grupos
+  - $n$: a quantidade (média) de indivíduos em cada grupo
+  - $f$: o tamanho do efeito (no caso de ANOVAs, calculamos o $\etaˆ2$)
+  - $\alpha$: o nível de significância (ou o valor de *p*)
+  - **poder**
+  
+. . . 
+
+- Informamos 4 desses valores para que o quinto seja calculado
+  - Antes de se conduzir um estudo para saber o $n$ ideal
+  - Depois de conduzido para descobrir o poder
+  
+##
+
+- Para calcular o $\etaˆ2$:
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+library(lsr)
+etaSquared(aov(data = sample.data, test ~ class))
+```
+
+</br>
+
+. . . 
+
+- Sugestões de Cohen: 
+  - [$0.1$: tamanho de efeito pequeno]{.alert}
+  - $0.25$: tamanho de efeito médio
+  - $0.4$: tamanho de efeito grande
+  
+##
+
+- Para calcular o **poder**:
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+library(pwr)
+pwr.anova.test(k = 3, n = 20, f = 0.1002268, sig.level = 0.0493)
+```
+
+. . . 
+
+- Por que apenas $9,5\%$ de probabilidade de detectar um efeito caso haja um efeito? 
+
+
+##
+
+- Para calcular o $n$ ideal para se obter um poder de $80\%$:
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+pwr.anova.test(k = 3, f = 0.1, sig.level = 0.05, power = 0.8)
+```
+
+
+::: incremental
+- Seriam necessários 322 aprendizes em cada turma para se obter $80\%$ de probabilidade de detectar um efeito caso haja um
+  - Factível?
+  - Então o que fazer?
+:::
+
+## E se conseguíssemos 322 aprendizes em cada turma?
+```r
+sample4 = sample(x = population, size = 322)
+sample5 = sample(x = population, size = 322)
+sample6 = sample(x = population, size = 322)
+```
+</br>
+
+. . . 
+
+::: columns
+::: {.column width="30%"}
+
+```{r}
+set.seed(4)
+sample4 = sample(x = population, size = 322)
+sample5 = sample(x = population, size = 322)
+sample6 = sample(x = population, size = 322)
+
+# Criar um tibble (data frame) com os dados das 3 turmas simuladas (samples)
+sample.data2 = tibble(class4 = sample4,
+                     class5 = sample5,
+                     class6 = sample6) %>% 
+  gather("class4", "class5", "class6", key = class, value = test)
+
+# TAbela com médias e desvios-padrão
+knitr::kable(sample.data2 %>% 
+               group_by(class) %>% 
+               summarize(mean = mean(test),
+                         SD = sd(test)), 
+             digits = 2)
+```
+
+:::
+
+::: {.column width="70%"}
+
+
+```{r}
+# Gerar gráfico
+ggplot(sample.data2, aes(x = class, y = test)) +
+  geom_boxplot() +
+  stat_summary(color = "blue") +
+  theme_minimal()
+```
+
+:::
+:::
+
+## ANOVA
+
+```{r}
+#| echo: true
+#| output-location: fragment
+ 
+summary(aov(data = sample.data2, test ~ class))
+```
+
+. . . 
+
+- Agora sim, temos $80\%$ de probabilidade de detectar um efeito caso exista um, e não detectamos efeito, porque de fato sabemos que **não** há um efeito nesta população
+
+
+## 5 críticas ao valor de *p* 
+(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015)
+
+1. decisão categórica que valor de *p* impõe
+2. arbitrariedade do 0,05 como valor limite para decisão
+3. possibilidade de se manipular os dados a fim de se alcançar um valor de *p* abaixo de 0,05 (*p-hacking*)
+4. existência de estudos com valor de *p* abaixo de 0,05 mas com baixo poder estatístico e/ou baixo tamanho de efeito
+5. [o valor de *p* apresenta apenas a probabilidade dos dados diante de uma $H_0$, mas não é capaz de informar sobre a probabilidade da $H_1$ e do efeito]{.bg style="--col: #FADBD8"}
+
+## 5. Exemplo de olhar para outras questões além do valor de *p*
+
+Resultado de um modelo linear que buscou verificar a influência das **vogais /e ɛ/** e do **tempo** (24 coletas mensais) sobre a **distância** (de Mahalanobis) das vogais em relação à média de /e/ de um aprendiz argentino de PB-L3:
+
+. . . 
+
+```r
+lm(data = MD.e, MahalDist ~ Vowels + Coleta)
+  
+  Coefficients:
+    Estimate Std. Error t value Pr(>|t|)    
+  (Intercept)    2.40735    0.17751  13.562  < 2e-16 ***
+    Vowels-ɛ     0.50729    0.15477   3.278  0.00109 ** 
+    Coleta      -0.03296    0.01118  -2.947  0.00330 ** 
+```
+
+::: incremental
+- Pelos valores de *p*, efeito de vogal e de tempo!
+  - Só que tempo diminuindo as distâncias =(
+:::
+
+## Distâncias previstas pelo modelo:
+
+
+![](figs/MahalDist-linear.png){width=80% fig-align="center"}
+
+. . . 
+
+- [Será?]{.fg style="--col: #C0392B"}
+
+## Dados que geraram as distâncias e o modelo:
+    
+![](figs/vowels-means-hertz.png){width=80% fig-align="center"}
+
+. . .
+
+- Será que realmente as vogais estão separadas?
+
+## Dados das distâncias por vogal ao longo do tempo
+  
+![](figs/MahalDist-points.png){width=80% fig-align="center"}
+
+. . .
+
+- Será que realmente houve efeito de tempo?
+
+## Com linhas de um modelo linear
+  
+![](figs/MahalDist-lm.png){width=80% fig-align="center"}
+  
+## Com linhas que permitem flutuação (loess)
+  
+![](figs/MahalDist-loess.png){width=80% fig-align="center"}
+  
+## Zoom nas linhas:
+    
+![](figs/MahalDist-loess-curves.png){width=80% fig-align="center"}
+  
+## Linhas previstas por *splines* de um GAM (*Generalized Additive Model*) bayesiano:
+  
+::: columns
+
+::: {.column width="70%"}
+
+![](figs/MahalDist-gam.png){fig-align="center"}
+  
+::: 
+
+::: {.column width="30%"}
+
+::: incremental
+- A história fica bastante incompleta olhando-se apenas para o valores de *p* do modelo linear
+- A melhor escolha aqui é de um modelo que permita flutuação da linha
+:::
+
+:::
+:::
+
+## Outras lições:
+
+::: incremental
+- O mundo é muito complexo, as relações são complexas, e as investigadas são desconhecidas
+- Há associações (correlações) espúrias
+:::
+
+## Correlações espúrias
+
+</br>
+
+![](figs/spurious1.png){fig-align="center"}
+
+##
+</br>
+![](figs/spurious2.png){fig-align="center"}
+
+##
+</br>
+![](figs/spurious3.png){fig-align="center"}
+
+##
+</br>
+![](figs/spurious4.png){fig-align="center"}
+
+
+## Outras lições:
+
+- O mundo é muito complexo, as relações são complexas, e as investigadas são desconhecidas
+- Há associações (correlações) espúrias
+
+::: incremental
+- Provavelmente há diversas variáveis não investigadas envolvidas na causalidade investigada
+- Sempre devemos assumir que há variáveis de confusão não observadas
+- Nem sempre sabemos as direções das causalidades
+:::
+
+## DAGs
+
+::: incremental
+- *Directed Acyclic Graphs*
+- Gráfico Acíclico Dirigido $\rightarrow$ um gráfico **dirigido** e **sem ciclo** útil para visualizar seu **modelo causal** e identificar **variáveis de confusão**
+  - [**Antes**]{.bg style="--col: #FADBD8"} de ajustar seu modelo inferencial
+:::
+
+##
+![](figs/DAG-gato01.png){fig-align="center"}
+
+##
+![](figs/DAG-gato02.png){fig-align="center"}
+
+##
+![](figs/DAG-amamentar01.png){fig-align="center"}
+
+##
+![](figs/DAG-amamentar02.png){fig-align="center"}
+
+##
+![](figs/DAG01.png){fig-align="center"}
+
+##
+![](figs/DAG02.png){fig-align="center"}
+
+##
+![](figs/DAG03.png){fig-align="center"}
+
+##
+![](figs/DAG04.png){fig-align="center"}
+
+##
+![](figs/DAG05.png){fig-align="center"}
+
+
+## Os 4 tipos básicos de variáveis de confusão
+
+```{r}
+library(dagitty)
+library(ggdag)
+library(tidyverse)
+library(patchwork)
+
+gg_simple_dag <- function(d) {
+  
+  d %>% 
+    ggplot(aes(x = x, y = y, xend = xend, yend = yend)) +
+    geom_dag_point(color = "steelblue", alpha = 1/2, size = 6.5) +
+    geom_dag_text(color = "black") +
+    geom_dag_edges() + 
+    theme_dag()
+  
+}
+
+d1 <- 
+  dagify(X ~ Z,
+         Y ~ Z,
+         coords = tibble(name = c("X", "Y", "Z"),
+                         x = c(1, 3, 2),
+                         y = c(2, 2, 1)))
+
+d2 <- 
+  dagify(Z ~ X,
+         Y ~ Z,
+         coords = tibble(name = c("X", "Y", "Z"),
+                         x = c(1, 3, 2),
+                         y = c(2, 1, 1.5)))
+
+d3 <- 
+  dagify(Z ~ X + Y,
+         coords = tibble(name = c("X", "Y", "Z"),
+                         x = c(1, 3, 2),
+                         y = c(1, 1, 2)))
+
+d4 <- 
+  dagify(Z ~ X + Y,
+         D ~ Z,
+         coords = tibble(name = c("X", "Y", "Z", "D"),
+                         x = c(1, 3, 2, 2),
+                         y = c(1, 1, 2, 1.05)))
+
+p1 <- gg_simple_dag(d1) + labs(subtitle = "The Fork")
+p2 <- gg_simple_dag(d2) + labs(subtitle = "The Pipe")
+p3 <- gg_simple_dag(d3) + labs(subtitle = "The Collider")
+p4 <- gg_simple_dag(d4) + labs(subtitle = "The Descendant")
+
+(p1 / p2 | p3 / p4) &
+  theme(plot.subtitle = element_text(hjust = 0.5))
+```
+
+
+## {background-iframe="https://www.dagitty.net/dags.html#"}
+
+
+## Alternativas para o valor de *p*:
+
+- Diminuir o foco no valor de *p* e não depender apenas dele para a inferência. Investigar e reportar:
+  - tamanho do efeito
+  - intervalos de confiança
+  - poder estatístico
+
+. . .   
+
+- Priorizar modelos estatísticos em vez de testes de hipótese 
+  - com efeitos mistos para coletas repetidas
+
+. . . 
+
+- Utilizar modelos estatísticos que nem mesmo utilizam valores de *p* e que investiguem a probabilidade da hipótese de trabalho diante dos dados (estatística bayesiana)
+
+
+
+
+
+
+
+## Objetivo da análise quantitativa (retomando)
+
+O grande problema do pesquisador, e consequente objetivo da estatística inferencial, é inferir [parâmetros]{.fg style="--col: #e64173"} (desconhecidos) de uma [população]{.fg style="--col: #e64173"} com base nos [dados]{.fg style="--col: #2E86C1"} (conhecidos) de uma [amostra]{.fg style="--col: #2E86C1"}.	
+
+::: {.incremental}
+
+- Muita responsabilidade!
+  - Reportar com cautela (modalizando)
+  - Investigar e reportar mais informações
+  - Acrescentar gradiência (dúvida) às inferências
+  - Conhecer bem o que representa e quais são as limitações do valor de *p* e reportá-lo de acordo com esse conhecimento
+
+::: 
+
+
+
+
+
+
+## Link e QR Code
