@@ -781,7 +781,7 @@ O grande problema do pesquisador, e consequente objetivo da estatística inferen
 
 ##
 
-![](figs/QRcode.png){fig-align="center"}
+![](figs/QRCode.png){fig-align="center"}
 
 [ronaldolimajr.github.io]()
 
