@@ -9,7 +9,7 @@ author:
   - name: "Ronaldo Lima Jr."
     orcid: 
     email: "ronaldo.junior@unb.br"
-    affiliations: "Universidade de Brasília | CNPq "
+    affiliations: "Universidade de Brasília | CNPq"
 date: ""
 ---
 
@@ -764,12 +764,6 @@ p4 <- gg_simple_dag(d4) + labs(subtitle = "The Descendant")
 
 - Utilizar modelos estatísticos que nem mesmo utilizam valores de *p* e que investiguem a probabilidade da hipótese de trabalho diante dos dados (estatística bayesiana)
 
-
-
-
-
-
-
 ## Objetivo da análise quantitativa (retomando)
 
 O grande problema do pesquisador, e consequente objetivo da estatística inferencial, é inferir [parâmetros]{.fg style="--col: #e64173"} (desconhecidos) de uma [população]{.fg style="--col: #e64173"} com base nos [dados]{.fg style="--col: #2E86C1"} (conhecidos) de uma [amostra]{.fg style="--col: #2E86C1"}.	
@@ -785,8 +779,10 @@ O grande problema do pesquisador, e consequente objetivo da estatística inferen
 ::: 
 
 
+##
 
+![](figs/QRcode.png){fig-align="center"}
 
+[ronaldolimajr.github.io]()
 
-
-## Link e QR Code
+[ronaldo.junior@unb.br]()
