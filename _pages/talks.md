@@ -5,22 +5,6 @@ permalink: /talks/
 author_profile: true
 ---
 
-### Workshops
-
-- 2023 -- **Visualização de dados em ggplot** (workshop on-line)
-  - [Slides](https://guilhermegarcia.github.io/ggplot2023/){:target="_blank"}  
-  - [Playlist](https://www.youtube.com/playlist?list=PL3Qku9eEGkK0FgvP3_Z0worKF-07KVcaq){:target="_blank"} do YouTube com gravação dos dois dias
-  - Demais [materiais](https://gdgarcia.ca/ggplot){:target="_blank"}
-- 2022 -- **Investigando os sons de línguas não nativas** (Curso de Verão da Abralin)
-  - [Slides](/files/2022-Abralin-cap-1.pdf){:target="_blank"} da apresentação "*Introdução a pesquisas de sons não nativos*" 
-- 2022 -- **Instrução Explícita** (Curso de Verão da Abralin)
-  - [Slides](/files/2022-Abralin-InstrExpl.pdf){:target="_blank"} da apresentação "*Introdução a pesquisas de sons não nativos*" 
-- 2021 -- **Second Language Acquisition** (Singularidades/Troika)
-  - [Course material](https://www.dropbox.com/sh/d7a9yi49tvp3uiz/AABnkn5v-cGKuHpIxStSZngza?dl=0){:target="_blank"} - slides, recordings, texts
-- 2020 -- **Introduction to Regression Models for Linguists** 
-  - [Playlist](https://www.youtube.com/playlist?list=PL3Qku9eEGkK1TF274nuIva85i4RaeIvOw){:target="_blank"} with the recordings of all sessions
-  - [Course material](https://www.dropbox.com/sh/h6w3qmoygq9hirf/AADxyv5YgrEO_0JJJaH4ZRhEa?dl=0){:target="_blank"} - slides, R scripts and datasets
-
 ### Talks
 
 
@@ -46,6 +30,23 @@ author_profile: true
   -  Seminários Linguísticos
 - 2020 -- [Video](https://www.youtube.com/watch?v=PAdDPtB0xsc){:target="_blank"}: Brazilian teachers and Brazilian learners: what model of English should be used?
   - Applied Linguistics Q&A
+
+### Workshops
+
+- 2024 -- 
+- 2023 -- **Visualização de dados em ggplot** (workshop on-line)
+  - [Slides](https://guilhermegarcia.github.io/ggplot2023/){:target="_blank"}  
+  - [Playlist](https://www.youtube.com/playlist?list=PL3Qku9eEGkK0FgvP3_Z0worKF-07KVcaq){:target="_blank"} do YouTube com gravação dos dois dias
+  - Demais [materiais](https://gdgarcia.ca/ggplot){:target="_blank"}
+- 2022 -- **Investigando os sons de línguas não nativas** (Curso de Verão da Abralin)
+  - [Slides](/files/2022-Abralin-cap-1.pdf){:target="_blank"} da apresentação "*Introdução a pesquisas de sons não nativos*" 
+- 2022 -- **Instrução Explícita** (Curso de Verão da Abralin)
+  - [Slides](/files/2022-Abralin-InstrExpl.pdf){:target="_blank"} da apresentação "*Introdução a pesquisas de sons não nativos*" 
+- 2021 -- **Second Language Acquisition** (Singularidades/Troika)
+  - [Course material](https://www.dropbox.com/sh/d7a9yi49tvp3uiz/AABnkn5v-cGKuHpIxStSZngza?dl=0){:target="_blank"} - slides, recordings, texts
+- 2020 -- **Introduction to Regression Models for Linguists** 
+  - [Playlist](https://www.youtube.com/playlist?list=PL3Qku9eEGkK1TF274nuIva85i4RaeIvOw){:target="_blank"} with the recordings of all sessions
+  - [Course material](https://www.dropbox.com/sh/h6w3qmoygq9hirf/AADxyv5YgrEO_0JJJaH4ZRhEa?dl=0){:target="_blank"} - slides, R scripts and datasets
 
 <!--
 {% if site.talkmap_link == true %}
