@@ -641,6 +641,38 @@ lm(data = MD.e, MahalDist ~ Vowels + Coleta)
 </br>
 ![](figs/spurious4.png){fig-align="center"}
 
+## Anscombe's quartet
+
+::: columns
+
+::: {.column width="30%"}
+$\bar{X}$ de x = 9
+
+$s$ de x = 3,3
+
+$\bar{X}$ de y = 7,5
+
+$s$ de y = 2
+
+Corr de x e y = 0,816
+
+Regressão linear: $y = 3+0,5x$
+
+$R^2=0,67$
+:::
+
+::: {.column width="70%"}
+![](figs/anscombesQuartet.png){fig-align="center"}
+:::
+::: 
+
+## Datasaurus dozen
+
+. . . 
+
+</br>
+![](figs/datasaurus.png){height=4in}
+
 
 ## Outras lições:
 
