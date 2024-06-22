@@ -33,7 +33,8 @@ author_profile: true
 
 ### Workshops
 
-- 2024 -- 
+- 2024 -- **Introdução a Análise Quantitativa de Dados para estudos fonéticos e fonológicos** (oficina presencial UFSC)
+  - [Slides](/files/UFSC2024/UFSC-slides/curso-stats-UFSC.html){:target="_blank"}  
 - 2023 -- **Visualização de dados em ggplot** (workshop on-line)
   - [Slides](https://guilhermegarcia.github.io/ggplot2023/){:target="_blank"}  
   - [Playlist](https://www.youtube.com/playlist?list=PL3Qku9eEGkK0FgvP3_Z0worKF-07KVcaq){:target="_blank"} do YouTube com gravação dos dois dias
