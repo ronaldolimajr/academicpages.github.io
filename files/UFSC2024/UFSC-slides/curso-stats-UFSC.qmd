@@ -729,7 +729,7 @@ summary(modEn2)
 
 ## Slides / códigos:
 
-
+![](figs/QRCode.png){fig-align="center"}
 
 ## Tarefa 1:
 
@@ -913,6 +913,8 @@ Podemos incluir quantas variáveis preditoras em um modelo de regressão?
 # Mais mão na massa! {background-color="#40666e"}
 
 ## Slides / códigos:
+
+![](figs/QRCode.png){fig-align="center"}
 
 ## Tarefa 3:
 
