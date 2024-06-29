@@ -1123,23 +1123,21 @@ Residuals   963 22.900 0.02378               </code></pre>
 </section>
 <section id="exemplo-de-olhar-para-outras-questões-além-do-valor-de-p" class="slide level2">
 <h2>5. Exemplo de olhar para outras questões além do valor de <em>p</em></h2>
-<p>Resultado de um modelo linear que buscou verificar a influência das <strong>vogais /e ɛ/</strong> e do <strong>tempo</strong> (24 coletas mensais) sobre a <strong>distância</strong> (de Mahalanobis) das vogais em relação à média de /e/ de um aprendiz argentino de PB-L3:</p>
+<p>Resultado de um modelo linear que buscou verificar a influência das <strong>vogais /e ɛ/</strong> e do <strong>tempo</strong> (24 coletas mensais) sobre a <strong>distância</strong> (de Mahalanobis) das vogais em relação à média de /e/ da primeira coleta de um aprendiz argentino de PB-L3:</p>
 <div class="fragment">
 <div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a><span class="fu">lm</span>(<span class="at">data =</span> MD.e, MahalDist <span class="sc">~</span> Vowels <span class="sc">+</span> Coleta)</span>
 <span id="cb25-2"><a href=""></a>  </span>
-<span id="cb25-3"><a href=""></a>  Coefficients<span class="sc">:</span></span>
-<span id="cb25-4"><a href=""></a>    Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
-<span id="cb25-5"><a href=""></a>  (Intercept)    <span class="fl">2.40735</span>    <span class="fl">0.17751</span>  <span class="fl">13.562</span>  <span class="sc">&lt;</span> <span class="fl">2e-16</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb25-6"><a href=""></a>    Vowels<span class="sc">-</span>ɛ     <span class="fl">0.50729</span>    <span class="fl">0.15477</span>   <span class="fl">3.278</span>  <span class="fl">0.00109</span> <span class="sc">**</span> </span>
-<span id="cb25-7"><a href=""></a>    Coleta      <span class="sc">-</span><span class="fl">0.03296</span>    <span class="fl">0.01118</span>  <span class="sc">-</span><span class="fl">2.947</span>  <span class="fl">0.00330</span> <span class="sc">**</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div>
-<ul>
-<li class="fragment">Pelos valores de <em>p</em>, efeito de vogal e de tempo!
-<ul>
-<li class="fragment">Só que tempo diminuindo as distâncias =(</li>
-</ul></li>
-</ul>
+<span id="cb25-3"><a href=""></a>Coefficients<span class="sc">:</span></span>
+<span id="cb25-4"><a href=""></a>            Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
+<span id="cb25-5"><a href=""></a>(Intercept)  <span class="fl">7.32433</span>    <span class="fl">0.62195</span>  <span class="fl">11.776</span>  <span class="sc">&lt;</span> <span class="fl">2e-16</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb25-6"><a href=""></a>Vowelsɛ      <span class="fl">1.56590</span>    <span class="fl">0.54227</span>   <span class="fl">2.888</span>  <span class="fl">0.00398</span> <span class="sc">**</span> </span>
+<span id="cb25-7"><a href=""></a>Coleta       <span class="fl">0.05736</span>    <span class="fl">0.03919</span>   <span class="fl">1.464</span>  <span class="fl">0.14362</span>    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="fragment">
+<ul>
+<li>Pelos valores de <em>p</em>, há efeito de vogal =)</li>
+<li>mas não de tempo =(</li>
+</ul>
 </div>
 </section>
 <section id="distâncias-previstas-pelo-modelo" class="slide level2">
@@ -1165,7 +1163,7 @@ Residuals   963 22.900 0.02378               </code></pre>
 
 <img data-src="figs/MahalDist-points.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><div class="fragment">
 <ul>
-<li>Será que realmente houve efeito de tempo?</li>
+<li>Será que realmente não houve efeito de tempo?</li>
 </ul>
 </div>
 </section>
@@ -1226,8 +1224,8 @@ Residuals   963 22.900 0.02378               </code></pre>
 <h2></h2>
 <p><br> <img data-src="figs/spurious4.png" class="quarto-figure quarto-figure-center"></p>
 </section>
-<section id="anscombes-quartet" class="slide level2">
-<h2>Anscombe’s quartet</h2>
+<section id="o-quarteto-de-anscombe-1973" class="slide level2">
+<h2>O quarteto de Anscombe (1973)</h2>
 <div class="columns">
 <div class="column" style="width:30%;">
 <p><span class="math inline">\(\bar{X}\)</span> de x = 9</p>
@@ -1252,6 +1250,10 @@ Residuals   963 22.900 0.02378               </code></pre>
 <p><br> <img data-src="figs/datasaurus.png" style="height:4in"></p>
 </div>
 </section>
+<section id="datasaurus-dozen-1" class="slide level2">
+<h2>Datasaurus dozen</h2>
+<p><img data-src="figs/datasaurus2.png" style="height:6in"></p>
+</section>
 <section id="outras-lições-1" class="slide level2">
 <h2>Outras lições:</h2>
 <ul>
@@ -1268,58 +1270,25 @@ Residuals   963 22.900 0.02378               </code></pre>
 </section>
 <section id="dags" class="slide level2">
 <h2>DAGs</h2>
-<div>
 <ul>
-<li class="fragment"><em>Directed Acyclic Graphs</em></li>
-<li class="fragment">Gráfico Acíclico Dirigido <span class="math inline">\(\rightarrow\)</span> um gráfico <strong>dirigido</strong> e <strong>sem ciclo</strong> útil para visualizar seu <strong>modelo causal</strong> e identificar <strong>variáveis de confusão</strong>
-<ul>
-<li class="fragment"><span class="bg" style="--col: #FADBD8"><strong>Antes</strong></span> de ajustar seu modelo inferencial</li>
-</ul></li>
+<li><em>Directed Acyclic Graphs</em> (Grafos Acíclicos Direcionados)</li>
 </ul>
+<div class="fragment">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-</section>
-<section id="section-28" class="slide level2">
-<h2></h2>
-
-<img data-src="figs/DAG-gato01.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="section-29" class="slide level2">
-<h2></h2>
-
-<img data-src="figs/DAG-gato02.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="section-30" class="slide level2">
-<h2></h2>
-
-<img data-src="figs/DAG-amamentar01.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="section-31" class="slide level2">
-<h2></h2>
-
-<img data-src="figs/DAG-amamentar02.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="section-32" class="slide level2">
-<h2></h2>
-
-<img data-src="figs/DAG01.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="section-33" class="slide level2">
-<h2></h2>
-
-<img data-src="figs/DAG02.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="section-34" class="slide level2">
-<h2></h2>
-
-<img data-src="figs/DAG03.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="section-35" class="slide level2">
-<h2></h2>
-
-<img data-src="figs/DAG04.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="section-36" class="slide level2">
-<h2></h2>
-
-<img data-src="figs/DAG05.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="os-4-tipos-básicos-de-variáveis-de-confusão" class="slide level2">
-<h2>Os 4 tipos básicos de variáveis de confusão</h2>
-
-<img data-src="NUPFFALE-slides_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
-<section id="section-37" class="slide level2" data-background-iframe="https://www.dagitty.net/dags.html#">
-<h2></h2>
+<p><strong>Propaganda</strong></p>
+</div>
+<div class="callout-content">
+<p>“<em>Incerteza e rigor: explorando questões de dedução, intuição e probabilidade na busca científica por causalidades</em>”</p>
+<p>VI Encontro Intermediário do GT de Fonética e Fonologia da ANPOLL (<em>UFPR–11 e 12 de setembro de 2024</em>)</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="alternativas-para-o-valor-de-p" class="slide level2">
 <h2>Alternativas para o valor de <em>p</em>:</h2>
@@ -1341,7 +1310,7 @@ Residuals   963 22.900 0.02378               </code></pre>
 </div>
 <div class="fragment">
 <ul>
-<li>Utilizar modelos estatísticos que nem mesmo utilizam valores de <em>p</em> e que investiguem a probabilidade da hipótese de trabalho diante dos dados (estatística bayesiana)</li>
+<li>Utilizar modelos estatísticos que nem mesmo utilizam valores de <em>p</em> e que investiguem a probabilidade da hipótese de trabalho diante dos dados (estatística bayesiana - <span class="fg" style="--col: #e64173"><em>stay tuned for 2025</em>!</span>)</li>
 </ul>
 </div>
 </section>
@@ -1356,11 +1325,12 @@ Residuals   963 22.900 0.02378               </code></pre>
 <li class="fragment">Investigar e reportar mais informações</li>
 <li class="fragment">Acrescentar gradiência (dúvida) às inferências</li>
 <li class="fragment">Conhecer bem o que representa e quais são as limitações do valor de <em>p</em> e reportá-lo de acordo com esse conhecimento</li>
+<li class="fragment">Pensar na <strong>significância linguística</strong>!</li>
 </ul></li>
 </ul>
 </div>
 </section>
-<section id="section-38" class="slide level2">
+<section id="section-28" class="slide level2">
 <h2></h2>
 
 <img data-src="figs/QRCode.png" class="quarto-figure quarto-figure-center r-stretch"><p><a href="">ronaldolimajr.github.io</a></p>

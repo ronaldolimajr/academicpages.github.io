@@ -540,24 +540,25 @@ summary(aov(data = sample.data2, test ~ class))
 
 ## 5. Exemplo de olhar para outras questões além do valor de *p*
 
-Resultado de um modelo linear que buscou verificar a influência das **vogais /e ɛ/** e do **tempo** (24 coletas mensais) sobre a **distância** (de Mahalanobis) das vogais em relação à média de /e/ de um aprendiz argentino de PB-L3:
+Resultado de um modelo linear que buscou verificar a influência das **vogais /e ɛ/** e do **tempo** (24 coletas mensais) sobre a **distância** (de Mahalanobis) das vogais em relação à média de /e/ da primeira coleta de um aprendiz argentino de PB-L3:
 
 . . . 
 
 ```r
 lm(data = MD.e, MahalDist ~ Vowels + Coleta)
   
-  Coefficients:
-    Estimate Std. Error t value Pr(>|t|)    
-  (Intercept)    2.40735    0.17751  13.562  < 2e-16 ***
-    Vowels-ɛ     0.50729    0.15477   3.278  0.00109 ** 
-    Coleta      -0.03296    0.01118  -2.947  0.00330 ** 
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  7.32433    0.62195  11.776  < 2e-16 ***
+Vowelsɛ      1.56590    0.54227   2.888  0.00398 ** 
+Coleta       0.05736    0.03919   1.464  0.14362    
 ```
 
-::: incremental
-- Pelos valores de *p*, efeito de vogal e de tempo!
-  - Só que tempo diminuindo as distâncias =(
-:::
+. . . 
+
+- Pelos valores de *p*, há efeito de vogal =)
+- mas não de tempo =(
+
 
 ## Distâncias previstas pelo modelo:
 
@@ -574,7 +575,7 @@ lm(data = MD.e, MahalDist ~ Vowels + Coleta)
 
 . . .
 
-- Será que realmente as vogais estão separadas?
+- Será que realmente as vogais estão separadas? 
 
 ## Dados das distâncias por vogal ao longo do tempo
   
@@ -582,7 +583,7 @@ lm(data = MD.e, MahalDist ~ Vowels + Coleta)
 
 . . .
 
-- Será que realmente houve efeito de tempo?
+- Será que realmente não houve efeito de tempo?
 
 ## Com linhas de um modelo linear
   
@@ -641,7 +642,7 @@ lm(data = MD.e, MahalDist ~ Vowels + Coleta)
 </br>
 ![](figs/spurious4.png){fig-align="center"}
 
-## Anscombe's quartet
+## O quarteto de Anscombe (1973)
 
 ::: columns
 
@@ -673,6 +674,9 @@ $R^2=0,67$
 </br>
 ![](figs/datasaurus.png){height=4in}
 
+## Datasaurus dozen
+
+![](figs/datasaurus2.png){height=6in}
 
 ## Outras lições:
 
@@ -687,97 +691,18 @@ $R^2=0,67$
 
 ## DAGs
 
-::: incremental
-- *Directed Acyclic Graphs*
-- Gráfico Acíclico Dirigido $\rightarrow$ um gráfico **dirigido** e **sem ciclo** útil para visualizar seu **modelo causal** e identificar **variáveis de confusão**
-  - [**Antes**]{.bg style="--col: #FADBD8"} de ajustar seu modelo inferencial
+- *Directed Acyclic Graphs* (Grafos Acíclicos Direcionados)
+
+. . . 
+
+::: {.callout-warning}
+## Propaganda
+"*Incerteza e rigor: explorando questões de dedução, intuição e probabilidade na busca científica por causalidades*"
+
+VI Encontro Intermediário do GT de Fonética e Fonologia da ANPOLL
+(*UFPR--11 e 12 de setembro de 2024*)
 :::
 
-##
-![](figs/DAG-gato01.png){fig-align="center"}
-
-##
-![](figs/DAG-gato02.png){fig-align="center"}
-
-##
-![](figs/DAG-amamentar01.png){fig-align="center"}
-
-##
-![](figs/DAG-amamentar02.png){fig-align="center"}
-
-##
-![](figs/DAG01.png){fig-align="center"}
-
-##
-![](figs/DAG02.png){fig-align="center"}
-
-##
-![](figs/DAG03.png){fig-align="center"}
-
-##
-![](figs/DAG04.png){fig-align="center"}
-
-##
-![](figs/DAG05.png){fig-align="center"}
-
-
-## Os 4 tipos básicos de variáveis de confusão
-
-```{r}
-library(dagitty)
-library(ggdag)
-library(tidyverse)
-library(patchwork)
-
-gg_simple_dag <- function(d) {
-  
-  d %>% 
-    ggplot(aes(x = x, y = y, xend = xend, yend = yend)) +
-    geom_dag_point(color = "steelblue", alpha = 1/2, size = 6.5) +
-    geom_dag_text(color = "black") +
-    geom_dag_edges() + 
-    theme_dag()
-  
-}
-
-d1 <- 
-  dagify(X ~ Z,
-         Y ~ Z,
-         coords = tibble(name = c("X", "Y", "Z"),
-                         x = c(1, 3, 2),
-                         y = c(2, 2, 1)))
-
-d2 <- 
-  dagify(Z ~ X,
-         Y ~ Z,
-         coords = tibble(name = c("X", "Y", "Z"),
-                         x = c(1, 3, 2),
-                         y = c(2, 1, 1.5)))
-
-d3 <- 
-  dagify(Z ~ X + Y,
-         coords = tibble(name = c("X", "Y", "Z"),
-                         x = c(1, 3, 2),
-                         y = c(1, 1, 2)))
-
-d4 <- 
-  dagify(Z ~ X + Y,
-         D ~ Z,
-         coords = tibble(name = c("X", "Y", "Z", "D"),
-                         x = c(1, 3, 2, 2),
-                         y = c(1, 1, 2, 1.05)))
-
-p1 <- gg_simple_dag(d1) + labs(subtitle = "The Fork")
-p2 <- gg_simple_dag(d2) + labs(subtitle = "The Pipe")
-p3 <- gg_simple_dag(d3) + labs(subtitle = "The Collider")
-p4 <- gg_simple_dag(d4) + labs(subtitle = "The Descendant")
-
-(p1 / p2 | p3 / p4) &
-  theme(plot.subtitle = element_text(hjust = 0.5))
-```
-
-
-## {background-iframe="https://www.dagitty.net/dags.html#"}
 
 
 ## Alternativas para o valor de *p*:
@@ -794,7 +719,7 @@ p4 <- gg_simple_dag(d4) + labs(subtitle = "The Descendant")
 
 . . . 
 
-- Utilizar modelos estatísticos que nem mesmo utilizam valores de *p* e que investiguem a probabilidade da hipótese de trabalho diante dos dados (estatística bayesiana)
+- Utilizar modelos estatísticos que nem mesmo utilizam valores de *p* e que investiguem a probabilidade da hipótese de trabalho diante dos dados (estatística bayesiana - [*stay tuned for 2025*!]{.fg style="--col: #e64173"})
 
 ## Objetivo da análise quantitativa (retomando)
 
@@ -807,6 +732,7 @@ O grande problema do pesquisador, e consequente objetivo da estatística inferen
   - Investigar e reportar mais informações
   - Acrescentar gradiência (dúvida) às inferências
   - Conhecer bem o que representa e quais são as limitações do valor de *p* e reportá-lo de acordo com esse conhecimento
+  - Pensar na **significância linguística**!
 
 ::: 
 
