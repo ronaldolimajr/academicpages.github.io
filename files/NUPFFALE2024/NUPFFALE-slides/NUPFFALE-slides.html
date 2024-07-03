@@ -570,8 +570,8 @@ Ronaldo Lima Jr.
 <ul>
 <li class="fragment">Qual é o seu limite? A partir de quantas caras em 100 jogadas você <strong>deduziria</strong> que estou roubando? <span class="bg" style="--col: #e64173">escreva este número</span>.
 <ul>
-<li class="fragment"><span class="math inline">\(H_0\)</span>: Ronaldo não está roubando – a moeda é justa</li>
 <li class="fragment"><span class="math inline">\(H_1\)</span>: Ronaldo está roubando – a moeda é adulterada</li>
+<li class="fragment"><span class="math inline">\(H_0\)</span>: Ronaldo não está roubando – a moeda é justa</li>
 </ul></li>
 </ul>
 </div>
@@ -660,7 +660,7 @@ Ronaldo Lima Jr.
 </section>
 <section id="críticas-ao-valor-de-p" class="slide level2">
 <h2>5 críticas ao valor de <em>p</em></h2>
-<p>(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015)</p>
+<p>(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015, Kruschke 2015)</p>
 <ol type="1">
 <li><span class="bg" style="--col: #FADBD8">decisão categórica que valor de <em>p</em> impõe</span></li>
 </ol>
@@ -670,7 +670,7 @@ Ronaldo Lima Jr.
 </section>
 <section id="críticas-ao-valor-de-p-1" class="slide level2">
 <h2>5 críticas ao valor de <em>p</em></h2>
-<p>(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015)</p>
+<p>(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015, Kruschke 2015)</p>
 <ol type="1">
 <li>decisão categórica que valor de <em>p</em> impõe</li>
 <li><span class="bg" style="--col: #FADBD8">arbitrariedade do 0,05 como valor limite para decisão</span></li>
@@ -689,7 +689,7 @@ Ronaldo Lima Jr.
 </section>
 <section id="críticas-ao-valor-de-p-2" class="slide level2">
 <h2>5 críticas ao valor de <em>p</em></h2>
-<p>(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015)</p>
+<p>(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015, Kruschke 2015)</p>
 <ol type="1">
 <li>decisão categórica que valor de <em>p</em> impõe</li>
 <li>arbitrariedade do 0,05 como valor limite para decisão</li>
@@ -725,7 +725,7 @@ Ronaldo Lima Jr.
 <li>Por falta de conhecimento
 <ul>
 <li>Teste unicaudal vs bicaudal</li>
-<li><em>HARKing</em></li>
+<li><em>HARKing</em> (<em>Hypothesizing After Results are Known</em>)</li>
 </ul></li>
 </ul>
 </section>
@@ -784,6 +784,42 @@ Ronaldo Lima Jr.
 <section id="section-19" class="slide level2" data-background-iframe="https://revista.abralin.org/index.php/abralin/article/view/1790">
 <h2></h2>
 </section>
+<section id="ex.-diferentes-aproximações-de-p-para-modelos-de-efeitos-mistos" class="slide level2">
+<h2>Ex.: Diferentes aproximações de <em>p</em> para modelos de efeitos mistos</h2>
+<ul>
+<li><em>Satterthwaite’s method</em></li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>lmertTest<span class="sc">::</span>mod1 <span class="ot">=</span> <span class="fu">lmer</span>(distancia <span class="sc">~</span> gravacao <span class="sc">+</span> (gravacao<span class="sc">|</span>falante))</span>
+<span id="cb5-2"><a href=""></a><span class="fu">summary</span>(mod1)</span>
+<span id="cb5-3"><a href=""></a></span>
+<span id="cb5-4"><a href=""></a>Fixed effects<span class="sc">:</span></span>
+<span id="cb5-5"><a href=""></a>            Estimate Std. Error       df t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
+<span id="cb5-6"><a href=""></a>(Intercept)  <span class="fl">1.16050</span>    <span class="fl">0.12993</span> <span class="fl">15.49896</span>   <span class="fl">8.932</span> <span class="fl">1.67e-07</span></span>
+<span id="cb5-7"><a href=""></a>recording    <span class="fl">0.14390</span>    <span class="fl">0.07027</span>  <span class="fl">9.81783</span>   <span class="fl">2.048</span>   <span class="fl">0.0683</span>   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="section-20" class="slide level2">
+<h2></h2>
+<ul>
+<li><em>t-statistics and the normal distribution function</em></li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>sjPlot<span class="sc">::</span><span class="fu">tab_model</span>(mod1)</span>
+<span id="cb6-2"><a href=""></a></span>
+<span id="cb6-3"><a href=""></a>Fixed effects<span class="sc">:</span></span>
+<span id="cb6-4"><a href=""></a>            Estimate Std. Error       df t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
+<span id="cb6-5"><a href=""></a>(Intercept)  <span class="fl">1.16050</span>    <span class="fl">0.12993</span> <span class="fl">15.49896</span>   <span class="fl">8.932</span> <span class="fl">1.67e-07</span></span>
+<span id="cb6-6"><a href=""></a>recording    <span class="fl">0.14390</span>    <span class="fl">0.07027</span>  <span class="fl">9.81783</span>   <span class="fl">2.048</span>   <span class="fl">0.048</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<ul>
+<li><em>conditional F-test with Kenward-Roger approximation</em></li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>sjPlot<span class="sc">::</span><span class="fu">tab_model</span>(mod1)</span>
+<span id="cb7-2"><a href=""></a></span>
+<span id="cb7-3"><a href=""></a>Fixed effects<span class="sc">:</span></span>
+<span id="cb7-4"><a href=""></a>            Estimate Std. Error       df t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
+<span id="cb7-5"><a href=""></a>(Intercept)  <span class="fl">1.16050</span>    <span class="fl">0.12993</span> <span class="fl">15.49896</span>   <span class="fl">8.932</span> <span class="fl">1.67e-07</span></span>
+<span id="cb7-6"><a href=""></a>recording    <span class="fl">0.14390</span>    <span class="fl">0.07027</span>  <span class="fl">9.81783</span>   <span class="fl">2.048</span>   <span class="fl">0.071</span>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 <section id="p-hacking-6" class="slide level2">
 <h2>3. <em>p-hacking</em></h2>
 <ul>
@@ -798,41 +834,41 @@ Ronaldo Lima Jr.
 <li><p>Por conduta antiética</p></li>
 </ul>
 </section>
-<section id="section-20" class="slide level2" data-background-iframe="https://projects.fivethirtyeight.com/p-hacking/">
+<section id="section-21" class="slide level2" data-background-iframe="https://projects.fivethirtyeight.com/p-hacking/">
 <h2></h2>
 </section>
 <section id="críticas-ao-valor-de-p-3" class="slide level2">
 <h2>5 críticas ao valor de <em>p</em></h2>
-<p>(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015)</p>
+<p>(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015, Kruschke 2015)</p>
 <ol type="1">
 <li>decisão categórica que valor de <em>p</em> impõe</li>
 <li>arbitrariedade do 0,05 como valor limite para decisão</li>
 <li>possibilidade de se manipular os dados a fim de se alcançar um valor de <em>p</em> abaixo de 0,05 (<em>p-hacking</em>)</li>
-<li><span class="bg" style="--col: #FADBD8">existência de estudos com valor de <em>p</em> abaixo de 0,05 mas com baixo poder estatístico e/ou baixo tamanho de efeito</span></li>
+<li><span class="bg" style="--col: #FADBD8">existência de estudos com valor de <em>p</em> abaixo de 0,05 mas com baixo poder estatístico e/ou tamanho de efeito pequeno</span></li>
 </ol>
 </section>
 <section id="simular-população-de-100-mil-alunos-com-seus-resultados-em-um-teste" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Simular população de 100 mil alunos com seus resultados em um teste</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb5-1" class="hljs-ln-code"><a href=""></a>population <span class="ot">=</span> <span class="fu">rbeta</span>(<span class="dv">100000</span>, <span class="dv">5</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb8-1" class="hljs-ln-code"><a href=""></a>population <span class="ot">=</span> <span class="fu">rbeta</span>(<span class="dv">100000</span>, <span class="dv">5</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="simular-população-de-100-mil-alunos-com-seus-resultados-em-um-teste-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Simular população de 100 mil alunos com seus resultados em um teste</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb6-1" class="hljs-ln-code"><a href=""></a>population <span class="ot">=</span> <span class="fu">rbeta</span>(<span class="dv">100000</span>, <span class="dv">5</span>, <span class="dv">2</span>)</span>
-<span id="cb6-2" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb6-3" class="hljs-ln-code"><a href=""></a><span class="fu">mean</span>(population)</span>
-<span id="cb6-4" class="hljs-ln-code"><a href=""></a><span class="fu">sd</span>(population)</span>
-<span id="cb6-5" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb6-6" class="hljs-ln-code"><a href=""></a><span class="fu">hist</span>(population)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb9-1" class="hljs-ln-code"><a href=""></a>population <span class="ot">=</span> <span class="fu">rbeta</span>(<span class="dv">100000</span>, <span class="dv">5</span>, <span class="dv">2</span>)</span>
+<span id="cb9-2" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb9-3" class="hljs-ln-code"><a href=""></a><span class="fu">mean</span>(population)</span>
+<span id="cb9-4" class="hljs-ln-code"><a href=""></a><span class="fu">sd</span>(population)</span>
+<span id="cb9-5" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb9-6" class="hljs-ln-code"><a href=""></a><span class="fu">hist</span>(population)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="section-21" class="slide level2">
+<section id="section-22" class="slide level2">
 <h2></h2>
 
 <img data-src="NUPFFALE-slides_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"><div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">mean</span>(population)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="fu">mean</span>(population)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.7138192</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">sd</span>(population)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="fu">sd</span>(population)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.1601712</code></pre>
 </div>
@@ -840,9 +876,9 @@ Ronaldo Lima Jr.
 </section>
 <section id="extrair-amostras-3-turmas-de-20-aprendizes-cada" class="slide level2">
 <h2>Extrair amostras – 3 turmas de 20 aprendizes cada</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a>sample1 <span class="ot">=</span> <span class="fu">sample</span>(<span class="at">x =</span> population, <span class="at">size =</span> <span class="dv">20</span>)</span>
-<span id="cb11-2"><a href=""></a>sample2 <span class="ot">=</span> <span class="fu">sample</span>(<span class="at">x =</span> population, <span class="at">size =</span> <span class="dv">20</span>)</span>
-<span id="cb11-3"><a href=""></a>sample3 <span class="ot">=</span> <span class="fu">sample</span>(<span class="at">x =</span> population, <span class="at">size =</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a>sample1 <span class="ot">=</span> <span class="fu">sample</span>(<span class="at">x =</span> population, <span class="at">size =</span> <span class="dv">20</span>)</span>
+<span id="cb14-2"><a href=""></a>sample2 <span class="ot">=</span> <span class="fu">sample</span>(<span class="at">x =</span> population, <span class="at">size =</span> <span class="dv">20</span>)</span>
+<span id="cb14-3"><a href=""></a>sample3 <span class="ot">=</span> <span class="fu">sample</span>(<span class="at">x =</span> population, <span class="at">size =</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
 <div class="fragment">
 <div class="columns">
@@ -894,7 +930,7 @@ Ronaldo Lima Jr.
 <section id="anova" class="slide level2">
 <h2>ANOVA</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="fu">summary</span>(<span class="fu">aov</span>(<span class="at">data =</span> sample.data, test <span class="sc">~</span> class))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">summary</span>(<span class="fu">aov</span>(<span class="at">data =</span> sample.data, test <span class="sc">~</span> class))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -908,7 +944,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <div class="fragment">
 <p>Porém…</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="fu">TukeyHSD</span>(<span class="fu">aov</span>(<span class="at">data =</span> sample.data, test <span class="sc">~</span> class))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">TukeyHSD</span>(<span class="fu">aov</span>(<span class="at">data =</span> sample.data, test <span class="sc">~</span> class))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -951,14 +987,14 @@ class3-class2 -0.01325904 -0.1382352 0.111717136 0.9647293</code></pre>
 </ul>
 </div>
 </section>
-<section id="section-22" class="slide level2">
+<section id="section-23" class="slide level2">
 <h2></h2>
 <ul>
 <li>Para calcular o <span class="math inline">\(\etaˆ2\)</span>:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="fu">library</span>(lsr)</span>
-<span id="cb16-2"><a href=""></a><span class="fu">etaSquared</span>(<span class="fu">aov</span>(<span class="at">data =</span> sample.data, test <span class="sc">~</span> class))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a><span class="fu">library</span>(lsr)</span>
+<span id="cb19-2"><a href=""></a><span class="fu">etaSquared</span>(<span class="fu">aov</span>(<span class="at">data =</span> sample.data, test <span class="sc">~</span> class))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -978,14 +1014,14 @@ class 0.1002268   0.1002268</code></pre>
 </ul>
 </div>
 </section>
-<section id="section-23" class="slide level2">
+<section id="section-24" class="slide level2">
 <h2></h2>
 <ul>
 <li>Para calcular o <strong>poder</strong>:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="fu">library</span>(pwr)</span>
-<span id="cb18-2"><a href=""></a><span class="fu">pwr.anova.test</span>(<span class="at">k =</span> <span class="dv">3</span>, <span class="at">n =</span> <span class="dv">20</span>, <span class="at">f =</span> <span class="fl">0.1002268</span>, <span class="at">sig.level =</span> <span class="fl">0.0493</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a><span class="fu">library</span>(pwr)</span>
+<span id="cb21-2"><a href=""></a><span class="fu">pwr.anova.test</span>(<span class="at">k =</span> <span class="dv">3</span>, <span class="at">n =</span> <span class="dv">20</span>, <span class="at">f =</span> <span class="fl">0.1002268</span>, <span class="at">sig.level =</span> <span class="fl">0.0493</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1007,13 +1043,13 @@ NOTE: n is number in each group</code></pre>
 </ul>
 </div>
 </section>
-<section id="section-24" class="slide level2">
+<section id="section-25" class="slide level2">
 <h2></h2>
 <ul>
 <li>Para calcular o <span class="math inline">\(n\)</span> ideal para se obter um poder de <span class="math inline">\(80\%\)</span>:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a><span class="fu">pwr.anova.test</span>(<span class="at">k =</span> <span class="dv">3</span>, <span class="at">f =</span> <span class="fl">0.1</span>, <span class="at">sig.level =</span> <span class="fl">0.05</span>, <span class="at">power =</span> <span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a><span class="fu">pwr.anova.test</span>(<span class="at">k =</span> <span class="dv">3</span>, <span class="at">f =</span> <span class="fl">0.1</span>, <span class="at">sig.level =</span> <span class="fl">0.05</span>, <span class="at">power =</span> <span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1041,9 +1077,9 @@ NOTE: n is number in each group</code></pre>
 </section>
 <section id="e-se-conseguíssemos-322-aprendizes-em-cada-turma" class="slide level2">
 <h2>E se conseguíssemos 322 aprendizes em cada turma?</h2>
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>sample4 <span class="ot">=</span> <span class="fu">sample</span>(<span class="at">x =</span> population, <span class="at">size =</span> <span class="dv">322</span>)</span>
-<span id="cb22-2"><a href=""></a>sample5 <span class="ot">=</span> <span class="fu">sample</span>(<span class="at">x =</span> population, <span class="at">size =</span> <span class="dv">322</span>)</span>
-<span id="cb22-3"><a href=""></a>sample6 <span class="ot">=</span> <span class="fu">sample</span>(<span class="at">x =</span> population, <span class="at">size =</span> <span class="dv">322</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a>sample4 <span class="ot">=</span> <span class="fu">sample</span>(<span class="at">x =</span> population, <span class="at">size =</span> <span class="dv">322</span>)</span>
+<span id="cb25-2"><a href=""></a>sample5 <span class="ot">=</span> <span class="fu">sample</span>(<span class="at">x =</span> population, <span class="at">size =</span> <span class="dv">322</span>)</span>
+<span id="cb25-3"><a href=""></a>sample6 <span class="ot">=</span> <span class="fu">sample</span>(<span class="at">x =</span> population, <span class="at">size =</span> <span class="dv">322</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
 <div class="fragment">
 <div class="columns">
@@ -1095,7 +1131,7 @@ NOTE: n is number in each group</code></pre>
 <section id="anova-1" class="slide level2">
 <h2>ANOVA</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a><span class="fu">summary</span>(<span class="fu">aov</span>(<span class="at">data =</span> sample.data2, test <span class="sc">~</span> class))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a><span class="fu">summary</span>(<span class="fu">aov</span>(<span class="at">data =</span> sample.data2, test <span class="sc">~</span> class))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1112,7 +1148,7 @@ Residuals   963 22.900 0.02378               </code></pre>
 </section>
 <section id="críticas-ao-valor-de-p-4" class="slide level2">
 <h2>5 críticas ao valor de <em>p</em></h2>
-<p>(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015)</p>
+<p>(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015, Kruschke 2015)</p>
 <ol type="1">
 <li>decisão categórica que valor de <em>p</em> impõe</li>
 <li>arbitrariedade do 0,05 como valor limite para decisão</li>
@@ -1125,13 +1161,13 @@ Residuals   963 22.900 0.02378               </code></pre>
 <h2>5. Exemplo de olhar para outras questões além do valor de <em>p</em></h2>
 <p>Resultado de um modelo linear que buscou verificar a influência das <strong>vogais /e ɛ/</strong> e do <strong>tempo</strong> (24 coletas mensais) sobre a <strong>distância</strong> (de Mahalanobis) das vogais em relação à média de /e/ da primeira coleta de um aprendiz argentino de PB-L3:</p>
 <div class="fragment">
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a><span class="fu">lm</span>(<span class="at">data =</span> MD.e, MahalDist <span class="sc">~</span> Vowels <span class="sc">+</span> Coleta)</span>
-<span id="cb25-2"><a href=""></a>  </span>
-<span id="cb25-3"><a href=""></a>Coefficients<span class="sc">:</span></span>
-<span id="cb25-4"><a href=""></a>            Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
-<span id="cb25-5"><a href=""></a>(Intercept)  <span class="fl">7.32433</span>    <span class="fl">0.62195</span>  <span class="fl">11.776</span>  <span class="sc">&lt;</span> <span class="fl">2e-16</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb25-6"><a href=""></a>Vowelsɛ      <span class="fl">1.56590</span>    <span class="fl">0.54227</span>   <span class="fl">2.888</span>  <span class="fl">0.00398</span> <span class="sc">**</span> </span>
-<span id="cb25-7"><a href=""></a>Coleta       <span class="fl">0.05736</span>    <span class="fl">0.03919</span>   <span class="fl">1.464</span>  <span class="fl">0.14362</span>    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a><span class="fu">lm</span>(<span class="at">data =</span> MD.e, MahalDist <span class="sc">~</span> Vowels <span class="sc">+</span> Coleta)</span>
+<span id="cb28-2"><a href=""></a>  </span>
+<span id="cb28-3"><a href=""></a>Coefficients<span class="sc">:</span></span>
+<span id="cb28-4"><a href=""></a>            Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
+<span id="cb28-5"><a href=""></a>(Intercept)  <span class="fl">7.32433</span>    <span class="fl">0.62195</span>  <span class="fl">11.776</span>  <span class="sc">&lt;</span> <span class="fl">2e-16</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb28-6"><a href=""></a>Vowelsɛ      <span class="fl">1.56590</span>    <span class="fl">0.54227</span>   <span class="fl">2.888</span>  <span class="fl">0.00398</span> <span class="sc">**</span> </span>
+<span id="cb28-7"><a href=""></a>Coleta       <span class="fl">0.05736</span>    <span class="fl">0.03919</span>   <span class="fl">1.464</span>  <span class="fl">0.14362</span>    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <ul>
@@ -1188,6 +1224,9 @@ Residuals   963 22.900 0.02378               </code></pre>
 <p><img data-src="figs/MahalDist-gam.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
+<ul>
+<li>Sem valores de <em>p</em> reportados</li>
+</ul>
 </div><div class="column" style="width:30%;">
 <div>
 <ul>
@@ -1212,15 +1251,15 @@ Residuals   963 22.900 0.02378               </code></pre>
 <p><br></p>
 
 <img data-src="figs/spurious1.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="section-25" class="slide level2">
+<section id="section-26" class="slide level2">
 <h2></h2>
 <p><br> <img data-src="figs/spurious2.png" class="quarto-figure quarto-figure-center"></p>
 </section>
-<section id="section-26" class="slide level2">
+<section id="section-27" class="slide level2">
 <h2></h2>
 <p><br> <img data-src="figs/spurious3.png" class="quarto-figure quarto-figure-center"></p>
 </section>
-<section id="section-27" class="slide level2">
+<section id="section-28" class="slide level2">
 <h2></h2>
 <p><br> <img data-src="figs/spurious4.png" class="quarto-figure quarto-figure-center"></p>
 </section>
@@ -1330,7 +1369,7 @@ Residuals   963 22.900 0.02378               </code></pre>
 </ul>
 </div>
 </section>
-<section id="section-28" class="slide level2">
+<section id="section-29" class="slide level2">
 <h2></h2>
 
 <img data-src="figs/QRCode.png" class="quarto-figure quarto-figure-center r-stretch"><p><a href="">ronaldolimajr.github.io</a></p>

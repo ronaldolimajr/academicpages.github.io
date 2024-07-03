@@ -107,8 +107,9 @@ O grande problema do pesquisador, e consequente objetivo da estatística inferen
 
 ::: {.incremental}
 - Qual é o seu limite? A partir de quantas caras em 100 jogadas você **deduziria** que estou roubando? [escreva este número]{.bg style="--col: #e64173"}.
-  - $H_0$: Ronaldo não está roubando -- a moeda é justa
   - $H_1$: Ronaldo está roubando -- a moeda é adulterada
+  - $H_0$: Ronaldo não está roubando -- a moeda é justa
+  
   
 ::: 
 
@@ -170,7 +171,7 @@ sum(dbinom(59:100, 100, 0.5))
 
 
 ## 5 críticas ao valor de *p* 
-(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015)
+(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015, Kruschke 2015)
 
 1. [decisão categórica que valor de *p* impõe]{.bg style="--col: #FADBD8"}
 
@@ -179,7 +180,7 @@ sum(dbinom(59:100, 100, 0.5))
 
 
 ## 5 críticas ao valor de *p* 
-(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015)
+(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015, Kruschke 2015)
 
 1. decisão categórica que valor de *p* impõe
 2. [arbitrariedade do 0,05 como valor limite para decisão]{.bg style="--col: #FADBD8"}
@@ -193,7 +194,7 @@ sum(dbinom(59:100, 100, 0.5))
 :::
 
 ## 5 críticas ao valor de *p* 
-(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015)
+(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015, Kruschke 2015)
 
 1. decisão categórica que valor de *p* impõe
 2. arbitrariedade do 0,05 como valor limite para decisão
@@ -221,7 +222,7 @@ sum(dbinom(59:100, 100, 0.5))
 
 - Por falta de conhecimento 
   - Teste unicaudal vs bicaudal
-  - *HARKing*
+  - *HARKing* (*Hypothesizing After Results are Known*)
 
 ## 3. *p-hacking*
 
@@ -261,6 +262,46 @@ sum(dbinom(59:100, 100, 0.5))
 
 ## {background-iframe="https://revista.abralin.org/index.php/abralin/article/view/1790"}
 
+## Ex.: Diferentes aproximações de *p* para modelos de efeitos mistos
+
+- *Satterthwaite’s method*
+
+```r
+lmertTest::mod1 = lmer(distancia ~ gravacao + (gravacao|falante))
+summary(mod1)
+
+Fixed effects:
+            Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)  1.16050    0.12993 15.49896   8.932 1.67e-07
+recording    0.14390    0.07027  9.81783   2.048   0.0683   
+```
+
+## 
+
+- *t-statistics and the normal distribution function*
+
+```r
+sjPlot::tab_model(mod1)
+
+Fixed effects:
+            Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)  1.16050    0.12993 15.49896   8.932 1.67e-07
+recording    0.14390    0.07027  9.81783   2.048   0.048 
+```
+
+. . . 
+
+- *conditional F-test with Kenward-Roger approximation*
+
+```r
+sjPlot::tab_model(mod1)
+
+Fixed effects:
+            Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)  1.16050    0.12993 15.49896   8.932 1.67e-07
+recording    0.14390    0.07027  9.81783   2.048   0.071  
+```
+
 ## 3. *p-hacking*
 - Por falta de conhecimento 
   - Teste unicaudal vs bicaudal
@@ -276,12 +317,12 @@ sum(dbinom(59:100, 100, 0.5))
 
 
 ## 5 críticas ao valor de *p* 
-(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015)
+(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015, Kruschke 2015)
 
 1. decisão categórica que valor de *p* impõe
 2. arbitrariedade do 0,05 como valor limite para decisão
 3. possibilidade de se manipular os dados a fim de se alcançar um valor de *p* abaixo de 0,05 (*p-hacking*)
-4. [existência de estudos com valor de *p* abaixo de 0,05 mas com baixo poder estatístico e/ou baixo tamanho de efeito]{.bg style="--col: #FADBD8"}
+4. [existência de estudos com valor de *p* abaixo de 0,05 mas com baixo poder estatístico e/ou tamanho de efeito pequeno]{.bg style="--col: #FADBD8"}
 
 
 
@@ -530,7 +571,7 @@ summary(aov(data = sample.data2, test ~ class))
 
 
 ## 5 críticas ao valor de *p* 
-(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015)
+(e.g., Wagenmakers 2007, Nuzzo 2014, Halsey 2015, Kruschke 2015)
 
 1. decisão categórica que valor de *p* impõe
 2. arbitrariedade do 0,05 como valor limite para decisão
@@ -604,6 +645,8 @@ Coleta       0.05736    0.03919   1.464  0.14362
 ::: {.column width="70%"}
 
 ![](figs/MahalDist-gam.png){fig-align="center"}
+
+- Sem valores de *p* reportados
   
 ::: 
 
