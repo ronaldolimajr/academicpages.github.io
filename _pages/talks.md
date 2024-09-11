@@ -7,13 +7,13 @@ author_profile: true
 
 ### Talks and Workshops
 
-- 2024 -- [*Slides em breve*]: **Incerteza e rigor: explorando questões de dedução, intuição e probabilidade na busca científica por causalidades**
+- 2024 -- [Slides](/files/2024GT/gt2024.html){:target="_blank"}: **Incerteza e rigor: explorando questões de dedução, intuição e probabilidade na busca científica por causalidades**
   - VI Encontro Intermediário do Grupo de Trabalho de Fonética e Fonologia da ANPOLL
 - 2024 -- [Slides](/files/nasalizacao.pdf){:target="_blank"}: **Nasalização**
   - Curso de Extensão Fonologia e Variação
-- 2024 -- [Slides](/files/NUPFFALE2024/NUPFFALE-slides/NUPFFALE-slides.html){:target="_blank"}: **Ponderando a pertinência do *p*: problemas e precauções (na análise de dados *ph*onéticos)**
+- 2024 -- [Slides](/files/2024NUPFFALE/NUPFFALE-slides/NUPFFALE-slides.html){:target="_blank"}: **Ponderando a pertinência do *p*: problemas e precauções (na análise de dados *ph*onéticos)**
   - 5th Biannual Meeting of the NUPFFALE Research Group
-- 2024 -- [Slides](/files/UFSC2024/UFSC-slides/curso-stats-UFSC.html){:target="_blank"}: **Introdução a Análise Quantitativa de Dados para estudos fonéticos e fonológicos** 
+- 2024 -- [Slides](/files/2024UFSC/UFSC-slides/curso-stats-UFSC.html){:target="_blank"}: **Introdução a Análise Quantitativa de Dados para estudos fonéticos e fonológicos** 
   - II FONAPLIANDO: encontro de fonética, fonologia e suas interfaces
 
 - 2023 -- [Slides](https://guilhermegarcia.github.io/ggplot2023/){:target="_blank"}, [Playlist](https://www.youtube.com/playlist?list=PL3Qku9eEGkK0FgvP3_Z0worKF-07KVcaq){:target="_blank"} e [Materiais](https://gdgarcia.ca/ggplot){:target="_blank"}: **Visualização de dados em ggplot** 
