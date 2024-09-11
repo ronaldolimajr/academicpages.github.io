@@ -1,0 +1,1452 @@
+---
+title: "Incerteza e rigor:"
+subtitle: "explorando questões de intuição e probabilidade na busca científica por causalidades"
+format: clean-revealjs
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+author:
+  - name: "Ronaldo Lima Jr."
+    orcid: 
+    email: "ronaldo.junior@unb.br"
+    affiliations: "Universidade de Brasília | CNPq"
+date: ""
+---
+
+````{r}
+library(tidyverse)
+````
+
+##
+![](figs/hapinness-money.png){fig-align="center"}
+
+##
+```{r}
+#| fig-height: 3
+#| fig-width: 5
+library(ggrepel)
+df <- read.csv("./metal_bands_happiness.csv")
+ggplot(df, aes(x=Metal.bands.per.capita, y=Score, label=Country.or.region)) +
+  scale_x_log10() +
+  stat_smooth(method = "lm", size = 0.5, alpha = 0.2) +
+  geom_point(color = "red", size = 0.5) +
+  geom_text_repel(size = 3, point.size = 0.5, segment.alpha = 0.5, segment.color = "red") +
+  xlab("Metal bands per 1M people") +
+  ylab("Average happiness score") +
+  theme_classic()
+```
+
+:::{style="font-size: 0.5em"}
+Fonte: Enc. Metallum (2016), after Jakub Marian; World Happiness Report (2022). Chart by Piotr Migdał
+:::
+
+# Por quê? {background-color="#e5b8a6"}
+
+# {background-color="#c4d7e0"}
+
+:::{style="font-size: 2em"}
+*Correlation does not mean causation*
+:::
+
+</br> 
+
+Correlação não implica causação
+
+##
+![](figs/wafflehouse.png){fig-align="center"}
+
+:::{style="font-size: 0.5em"}
+[https://www.youtube.com/watch?v=mBEA7PKDmiY]
+:::
+
+##
+</br>
+![](figs/spurious4.png){fig-align="center"}
+
+:::{style="font-size: 0.5em"}
+[https://www.tylervigen.com/spurious-correlations]()
+:::
+
+##
+</br>
+![](figs/spurious3.png){fig-align="center"}
+
+:::{style="font-size: 0.5em"}
+[https://www.tylervigen.com/spurious-correlations]()
+:::
+
+# {background-color="#c4d7e0"}
+
+:::{style="font-size: 2em"}
+"Todos os modelos são errados, mas alguns são úteis"
+:::
+
+(George E. P. Box)
+
+## {.center}
+Dados reais 
+
+$\Downarrow$ 
+
+modelo (científico/estatístico) 
+
+$\Downarrow$ 
+
+estimativa do mundo real
+
+##
+
+::: {layout-ncol=3}
+
+::: {.fragment fragment-index=1}
+![dados reais](figs/recipe1.png){fig-align="center"}
+:::
+
+::: {.fragment fragment-index=2}
+![modelo](figs/recipe2.png){layout-valign="bottom"}
+:::
+
+::: {.fragment fragment-index=3}
+![estimativa](figs/recipe3.png){fig-align="center"}
+:::
+
+:::
+
+## {background-iframe="https://revista.abralin.org/index.php/abralin/article/view/1790"}
+  
+## Observação de estrelas
+### (sócio, *step*, Varbrul/Goldbvarb)
+
+```{.r code-line-numbers="1|3-14|16"}
+N = 150
+
+dsim = data.frame(
+  x1 = rnorm(N), 
+  x2 = rnorm(N), 
+  x3 = rnorm(N), 
+  x4 = rnorm(N), 
+  x5 = rnorm(N), 
+  x6 = rnorm(N), 
+  x7 = rnorm(N), 
+  x8 = rnorm(N), 
+  x9 = rnorm(N), 
+  x10 = rnorm(N),
+  y = rnorm(N))
+
+summary(lm(y ~ x1+x2+x3+x4+x5+x6+x7+x8+x9+x10, dsim))
+```
+
+  
+## {background-image="figs/starGazing.gif" background-size="contain"}
+
+# Então quais variáveis incluir? {background-color="#e5b8a6"}
+
+# DAGs {background-color="#c4d7e0"}
+
+## Grafos Dirigidos Acíclicos
+
+::: {.incremental}
+- Grafo
+- Dirigido
+- Acíclico
+- Modelo científico vs Modelo estatístico
+- Permitem modelar (um)a causalidade
+- Permitem identificar e bloquear **variáveis de confusão** (*confounding variables*)
+:::
+
+## Grafos Dirigidos Acíclicos
+
+</br>
+
+![](figs/dagitty_x-y.png){fig-align="center" height=5em}
+
+## Grafos Dirigidos Acíclicos
+![](figs/DAG1.png){fig-align="center"}
+
+## Grafos Dirigidos Acíclicos
+![](figs/DAG.png){fig-align="center" height=15em}
+
+
+# Variáveis de confusão {background-color="#c4d7e0"}
+
+<!-- ==================================================================== -->
+<!--                       FORQUILHA                                      -->
+<!-- ==================================================================== -->
+
+
+
+# Forquilha (*Fork*) {background-color="#e5b8a6"}
+
+## Forquilha
+
+![](figs/dagitty_fork.png){height=3in}
+
+- Há associação entre X e Y, mas
+- **X não causa Y** (Z causa os dois)
+- A associação desaparece quando se estratifica por Z
+  - [Estratifique!]{.fg style="--col: #e64173"}
+- $X \leftarrow Z \rightarrow Y$
+
+## Forquilha
+### Exemplo categórico
+
+$X \leftarrow Z \rightarrow Y$
+
+```{r}
+set.seed(123)
+```
+
+
+::: columns
+::: {.column width="50%"}
+
+```{r}
+#| echo: true
+n = 1000
+z = rbernoulli(n, 0.5)
+x = rbernoulli(n, (1-z)*0.1 + z*0.9)
+y = rbernoulli(n, (1-z)*0.1 + z*0.9)
+
+table(x,y)
+```
+
+:::  {.fragment}
+
+</br>
+
+```{r}
+#| echo: true
+cor(x,y)
+```
+
+:::
+:::
+
+::: {.column width="50%"}
+
+:::  {.fragment}
+
+```{r}
+#| echo: true
+table(x[z==0], y[z==0])
+table(x[z==1], y[z==1])
+```
+
+:::
+
+:::  {.fragment} 
+
+</br>
+
+```{r}
+#| echo: true
+round(cor(x[z==0], y[z==0]), 3)
+round(cor(x[z==1], y[z==1]), 3)
+```
+
+:::
+:::
+:::
+
+## Forquilha 
+### Exemplo contínuo
+
+$X \leftarrow Z \rightarrow Y$
+
+```{r}
+set.seed(123)
+```
+
+```{r}
+cols = c(4,2)
+```
+
+::: columns
+::: {.column width="40%"}
+
+```{r}
+#| echo: true
+#| eval: false
+ 
+n = 300
+z = rbernoulli(n)
+x = rnorm(n, 2*z-1)
+y = rnorm(n, 2*z-1)
+
+plot(x, y)
+```
+
+:::
+
+::: {.column width="60%"}
+```{r}
+#| fig-height: 8
+
+n = 300
+z = rbernoulli(n)
+x = rnorm(n, 2*z-1)
+y = rnorm(n, 2*z-1)
+
+plot(x, y, bty="n", ylim = c(-3,4), xlim = c(-4,3))
+```
+:::
+:::
+
+## Forquilha
+### Exemplo contínuo
+
+$X \leftarrow Z \rightarrow Y$
+
+```{r}
+set.seed(123)
+```
+
+```{r}
+cols = c(4,2)
+```
+
+::: columns
+::: {.column width="40%"}
+
+```{.r code-line-numbers="7"}
+n = 300
+z = rbernoulli(n)
+x = rnorm(n, 2*z-1)
+y = rnorm(n, 2*z-1)
+
+plot(x, y)
+abline(lm(y~x))
+```
+
+:::
+
+::: {.column width="60%"}
+```{r}
+#| fig-height: 8
+
+n = 300
+z = rbernoulli(n)
+x = rnorm(n, 2*z-1)
+y = rnorm(n, 2*z-1)
+
+plot(x, y, bty="n", ylim = c(-3,4), xlim = c(-4,3))
+abline(lm(y~x), lwd=3)
+```
+:::
+:::
+
+## Forquilha
+### Exemplo contínuo
+
+$X \leftarrow Z \rightarrow Y$
+
+```{r}
+set.seed(123)
+```
+
+```{r}
+cols = c(4,2)
+```
+
+::: columns
+::: {.column width="40%"}
+
+```{.r code-line-numbers="6-8"}
+n = 300
+z = rbernoulli(n)
+x = rnorm(n, 2*z-1)
+y = rnorm(n, 2*z-1)
+
+cols = c(4,2)
+
+plot(x, y, col=cols[z+1])
+abline(lm(y~x))
+```
+
+:::
+
+::: {.column width="60%"}
+```{r}
+#| fig-height: 8
+
+n = 300
+z = rbernoulli(n)
+x = rnorm(n, 2*z-1)
+y = rnorm(n, 2*z-1)
+
+plot(x, y, col=cols[z+1], lwd=3, bty="n", ylim = c(-3,4), xlim = c(-4,3))
+abline(lm(y~x), lwd=3)
+legend("topleft", legend=c("z=0", "z=1"), text.col = c(4,2),
+       bty="n", cex = 2.5)
+```
+:::
+:::
+
+## Forquilha
+### Exemplo contínuo
+
+$X \leftarrow Z \rightarrow Y$
+
+```{r}
+set.seed(123)
+```
+
+```{r}
+cols = c(4,2)
+```
+
+::: columns
+::: {.column width="40%"}
+
+```{.r code-line-numbers="11-14"}
+n = 300
+z = rbernoulli(n)
+x = rnorm(n, 2*z-1)
+y = rnorm(n, 2*z-1)
+
+cols = c(4,2)
+
+plot(x, y, col=cols[z+1])
+abline(lm(y~x))
+
+abline(lm(y[z==1] ~ x[z==1]), 
+       col=2, lwd=3)
+abline(lm(y[z==0] ~ x[z==0]), 
+       col=4, lwd=3)
+```
+
+:::
+
+::: {.column width="60%"}
+```{r}
+#| fig-height: 8
+
+n = 300
+z = rbernoulli(n)
+x = rnorm(n, 2*z-1)
+y = rnorm(n, 2*z-1)
+
+plot(x, y, col=cols[z+1], lwd=3, bty="n", ylim = c(-3,4), xlim = c(-4,3))
+abline(lm(y[z==1] ~ x[z==1]), col=2, lwd=3)
+abline(lm(y[z==0] ~ x[z==0]), col=4, lwd=3)
+abline(lm(y~x))
+legend("topleft", legend=c("z=0", "z=1"), text.col = c(4,2),
+       bty="n", cex = 2.5)
+```
+:::
+:::
+
+
+## Forquilha - ilustração 1
+### Tosse causa dor de garganta?
+
+![](figs/dagitty_covid1.png){height=4in}
+
+## Forquilha - ilustração 1
+### Tosse causa dor de garganta?
+
+![](figs/dagitty_covid2.png){height=4in}
+
+:::{.incremental}
+- Sim! Mas é preciso condicionar/estratificar por Covid para ver o real efeito de tosse sobre dor de garganta
+:::
+
+
+## Forquilha - ilustração 2
+### Participar mais na aula causa tirar maiores notas?
+
+![](figs/dagitty_prova1.png){height=4in}
+
+## Forquilha - ilustração 2
+### Participar mais na aula causa tirar maiores notas?
+
+![](figs/dagitty_prova.png){height=3in}
+
+:::{.incremental}
+- Pode ser que sim, mas também pode ser que outra coisa cause participar mais e tirar maiores notas
+  - Se motivação puder ser essa variável de confusão, é preciso condicionar/estratificar por motivação
+  
+:::
+
+
+<!-- ==================================================================== -->
+<!--                       MEDIADOR                                       -->
+<!-- ==================================================================== -->
+
+
+# Mediador (*Pipe/Mediator*) {background-color="#e5b8a6"}
+
+## Mediador 
+
+![](figs/dagitty_pipe.png){height=2in}
+
+- **Há** associação entre X e Y 
+- **X causa Y** por meio de Z
+- A associação desaparece quando se estratifica por Z
+  - [Não estratifique!]{.fg style="--col: #e64173"}
+- $X \rightarrow Z \rightarrow Y$
+
+
+## Mediador 
+### Exemplo categórico
+
+$X \rightarrow Z \rightarrow Y$
+
+```{r}
+set.seed(123)
+```
+
+
+::: columns
+::: {.column width="50%"}
+
+```{r}
+#| echo: true
+n = 1000
+x = rbernoulli(n, 0.5)
+z = rbernoulli(n, (1-x)*0.1 + x*0.9)
+y = rbernoulli(n, (1-z)*0.1 + z*0.9)
+
+table(x,y)
+```
+
+:::  {.fragment}
+
+</br>
+
+```{r}
+#| echo: true
+cor(x,y)
+```
+
+:::
+:::
+
+::: {.column width="50%"}
+
+:::  {.fragment}
+
+```{r}
+#| echo: true
+table(x[z==0], y[z==0])
+table(x[z==1], y[z==1])
+```
+
+:::
+
+:::  {.fragment} 
+
+</br>
+
+```{r}
+#| echo: true
+round(cor(x[z==0], y[z==0]), 3)
+round(cor(x[z==1], y[z==1]), 3)
+```
+
+:::
+:::
+:::
+
+## Mediador 
+### Exemplo contínuo
+
+$X \rightarrow Z \rightarrow Y$
+
+```{r}
+set.seed(123)
+```
+
+```{r}
+cols = c(4,2)
+```
+
+::: columns
+::: {.column width="40%"}
+
+```{r}
+#| echo: true
+#| eval: false
+ 
+n = 300
+x = rnorm(n)
+z = rbernoulli(n, arm::invlogit(x))
+y = rnorm(n, 2*z-1)
+
+plot(x, y)
+```
+
+:::
+
+::: {.column width="60%"}
+```{r}
+#| fig-height: 8
+
+n = 300
+x = rnorm(n)
+z = rbernoulli(n, arm::invlogit(x))
+y = rnorm(n, 2*z-1)
+
+plot(x, y, bty="n", ylim = c(-3,4), xlim = c(-3,3))
+```
+:::
+:::
+
+## Mediador (*Pipe/Mediator*)
+### Exemplo contínuo
+
+$X \rightarrow Z \rightarrow Y$
+
+```{r}
+set.seed(123)
+```
+
+```{r}
+cols = c(4,2)
+```
+
+::: columns
+::: {.column width="40%"}
+
+```{.r code-line-numbers="7"}
+n = 300
+x = rnorm(n)
+z = rbernoulli(n, arm::invlogit(x))
+y = rnorm(n, 2*z-1)
+
+plot(x, y)
+abline(lm(y~x))
+```
+
+:::
+
+::: {.column width="60%"}
+```{r}
+#| fig-height: 8
+
+n = 300
+x = rnorm(n)
+z = rbernoulli(n, arm::invlogit(x))
+y = rnorm(n, 2*z-1)
+
+plot(x, y, bty="n", ylim = c(-3,4), xlim = c(-3,3))
+abline(lm(y~x), lwd=3)
+```
+:::
+:::
+
+## Mediador 
+### Exemplo contínuo
+
+$X \rightarrow Z \rightarrow Y$
+
+```{r}
+set.seed(123)
+```
+
+```{r}
+cols = c(4,2)
+```
+
+::: columns
+::: {.column width="40%"}
+
+```{.r code-line-numbers="6-8"}
+n = 300
+x = rnorm(n)
+z = rbernoulli(n, arm::invlogit(x))
+y = rnorm(n, 2*z-1)
+
+cols = c(4,2)
+
+plot(x, y, col=cols[z+1])
+abline(lm(y~x))
+```
+
+:::
+
+::: {.column width="60%"}
+```{r}
+#| fig-height: 8
+
+n = 300
+x = rnorm(n)
+z = rbernoulli(n, arm::invlogit(x))
+y = rnorm(n, 2*z-1)
+
+plot(x, y, col=cols[z+1], lwd=3, bty="n", ylim = c(-3,4), xlim = c(-3,3))
+abline(lm(y~x), lwd=3)
+legend("topleft", legend=c("z=0", "z=1"), text.col = c(4,2),
+       bty="n", cex = 2.5)
+```
+:::
+:::
+
+## Mediador 
+### Exemplo contínuo
+
+$X \rightarrow Z \rightarrow Y$
+
+```{r}
+set.seed(123)
+```
+
+```{r}
+cols = c(4,2)
+```
+
+::: columns
+::: {.column width="40%"}
+
+```{.r code-line-numbers="11-14"}
+n = 300
+x = rnorm(n)
+z = rbernoulli(n, arm::invlogit(x))
+y = rnorm(n, 2*z-1)
+
+cols = c(4,2)
+
+plot(x, y, col=cols[z+1])
+abline(lm(y~x))
+
+abline(lm(y[z==1] ~ x[z==1]), 
+       col=2, lwd=3)
+abline(lm(y[z==0] ~ x[z==0]), 
+       col=4, lwd=3)
+```
+
+:::
+
+::: {.column width="60%"}
+```{r}
+#| fig-height: 8
+
+n = 300
+x = rnorm(n)
+z = rbernoulli(n, arm::invlogit(x))
+y = rnorm(n, 2*z-1)
+
+plot(x, y, col=cols[z+1], lwd=3, bty="n", ylim = c(-3,4), xlim = c(-3,3))
+abline(lm(y[z==1] ~ x[z==1]), col=2, lwd=3)
+abline(lm(y[z==0] ~ x[z==0]), col=4, lwd=3)
+abline(lm(y~x))
+legend("topleft", legend=c("z=0", "z=1"), text.col = c(4,2),
+       bty="n", cex = 2.5)
+```
+:::
+:::
+
+## Mediador -- ilustração 1
+### Fogo causa fumaça, que causa o alarma soar
+
+![](figs/dagitty_alarme.png){height=2in}
+
+:::{.incremental}
+- O fogo causa o alarme soar?
+  - Sim! Por meio da fumaça
+  
+::: 
+
+## Mediador -- ilustração 2
+### O novo método de ensino aumenta a motivação, que aumenta a nota na prova
+
+![](figs/dagitty_motivacao.png){height=2in}
+
+:::{.incremental}
+- O novo método de ensino causa melhores resultados?
+  - Sim! Por meio da motivação
+  - [Mas não será visto se condicinar/estratificar por motivação!]{.fg style="--col: #e64173"}
+
+:::
+
+<!-- ==================================================================== -->
+<!--                       Colisor                                        -->
+<!-- ==================================================================== -->
+
+# Colisor (*Collider*) {background-color="#e5b8a6"}
+
+## Colisor
+
+![](figs/dagitty_collider.png){height=3in}
+
+- **Não há** associação entre X e Y 
+- X e Y causam Z e aparece uma associação entre X e Y quando se estratifica por Z
+  - [Não estratifique!]{.fg style="--col: #e64173"}
+- $X \rightarrow Z \leftarrow Y$
+
+
+
+## Colisor 
+### Exemplo categórico
+
+$X \rightarrow Z \leftarrow Y$
+
+```{r}
+set.seed(123)
+```
+
+
+::: columns
+::: {.column width="50%"}
+
+```{r}
+#| echo: true
+n = 1000
+x = rbernoulli(n, 0.5)
+y = rbernoulli(n, 0.5)
+z = rbernoulli(n, 
+               ifelse(x+y>0, 
+                      0.9, 0.2))
+
+table(x,y)
+```
+
+:::  {.fragment}
+
+</br>
+
+```{r}
+#| echo: true
+cor(x,y)
+```
+
+:::
+:::
+
+::: {.column width="50%"}
+
+:::  {.fragment}
+
+```{r}
+#| echo: true
+table(x[z==0], y[z==0])
+table(x[z==1], y[z==1])
+```
+
+:::
+
+:::  {.fragment} 
+
+</br>
+
+```{r}
+#| echo: true
+round(cor(x[z==0], y[z==0]), 3)
+round(cor(x[z==1], y[z==1]), 3)
+```
+
+:::
+:::
+:::
+
+## Colisor
+### Exemplo contínuo
+
+$X \rightarrow Z \leftarrow Y$
+
+```{r}
+set.seed(123)
+```
+
+```{r}
+cols = c(4,2)
+```
+
+::: columns
+::: {.column width="40%"}
+
+```{r}
+#| echo: true
+#| eval: false
+ 
+n = 300
+x = rnorm(n)
+y = rnorm(n)
+z = rbernoulli(n, 
+               arm::invlogit(2*x+2*y-2))
+
+plot(x, y)
+```
+
+:::
+
+::: {.column width="60%"}
+```{r}
+#| fig-height: 8
+
+n = 300
+x = rnorm(n)
+y = rnorm(n)
+z = rbernoulli(n, arm::invlogit(2*x+2*y-2))
+
+plot(x, y, bty="n", ylim = c(-3,4), xlim = c(-3,3))
+```
+:::
+:::
+
+## Colisor
+### Exemplo contínuo
+
+$X \rightarrow Z \leftarrow Y$
+
+```{r}
+set.seed(123)
+```
+
+```{r}
+cols = c(4,2)
+```
+
+::: columns
+::: {.column width="40%"}
+
+```{.r code-line-numbers="7"}
+n = 300
+x = rnorm(n)
+y = rnorm(n)
+z = rbernoulli(n, arm::invlogit(2*x+2*y-2))
+
+plot(x, y)
+abline(lm(y~x))
+```
+
+:::
+
+::: {.column width="60%"}
+```{r}
+#| fig-height: 8
+
+n = 300
+x = rnorm(n)
+y = rnorm(n)
+z = rbernoulli(n, arm::invlogit(2*x+2*y-2))
+
+plot(x, y, bty="n", ylim = c(-3,4), xlim = c(-3,3))
+abline(lm(y~x), lwd=3)
+```
+:::
+:::
+
+## Colisor
+### Exemplo contínuo
+
+$X \rightarrow Z \leftarrow Y$
+
+```{r}
+set.seed(123)
+```
+
+```{r}
+cols = c(4,2)
+```
+
+::: columns
+::: {.column width="40%"}
+
+```{.r code-line-numbers="6-8"}
+n = 300
+x = rnorm(n)
+y = rnorm(n)
+z = rbernoulli(n, arm::invlogit(2*x+2*y-2))
+
+cols = c(4,2)
+
+plot(x, y, col=cols[z+1])
+abline(lm(y~x))
+```
+
+:::
+
+::: {.column width="60%"}
+```{r}
+#| fig-height: 8
+
+n = 300
+x = rnorm(n)
+y = rnorm(n)
+z = rbernoulli(n, arm::invlogit(2*x+2*y-2))
+
+plot(x, y, col=cols[z+1], lwd=3, bty="n", ylim = c(-3,4), xlim = c(-3,3))
+abline(lm(y~x), lwd=3)
+legend("topleft", legend=c("z=0", "z=1"), text.col = c(4,2),
+       bty="n", cex = 2.5)
+```
+:::
+:::
+
+## Colisor 
+### Exemplo contínuo
+
+$X \rightarrow Z \leftarrow Y$
+
+```{r}
+set.seed(123)
+```
+
+```{r}
+cols = c(4,2)
+```
+
+::: columns
+::: {.column width="40%"}
+
+```{.r code-line-numbers="11-14"}
+n = 300
+x = rnorm(n)
+y = rnorm(n)
+z = rbernoulli(n, arm::invlogit(2*x+2*y-2))
+
+cols = c(4,2)
+
+plot(x, y, col=cols[z+1])
+abline(lm(y~x))
+
+abline(lm(y[z==1] ~ x[z==1]), 
+       col=2, lwd=3)
+abline(lm(y[z==0] ~ x[z==0]), 
+       col=4, lwd=3)
+```
+
+:::
+
+::: {.column width="60%"}
+```{r}
+#| fig-height: 8
+
+n = 300
+x = rnorm(n)
+y = rnorm(n)
+z = rbernoulli(n, arm::invlogit(2*x+2*y-2))
+
+plot(x, y, col=cols[z+1], lwd=3, bty="n", ylim = c(-3,4), xlim = c(-3,3))
+abline(lm(y[z==1] ~ x[z==1]), col=2, lwd=3)
+abline(lm(y[z==0] ~ x[z==0]), col=4, lwd=3)
+abline(lm(y~x))
+legend("topleft", legend=c("z=0", "z=1"), text.col = c(4,2),
+       bty="n", cex = 2.5)
+```
+:::
+:::
+
+## Colisor - ilustração 1
+
+::: {layout-ncol=2}
+![Megan Fox](figs/meganFox.jpeg){height=3in fig-align="left"}
+
+![](figs/dagitty_ator.png){height=3in fig-align="left"}
+
+:::
+
+## Colisor -- ilustração 1
+### Mais talento causa menos beleza? Menos beleza causa mais talento?
+
+```{r}
+set.seed(3444)
+
+star_is_born <- tibble(
+  beauty = rnorm(2500),
+  talent = rnorm(2500),
+  score = beauty + talent,
+  c85 = quantile(score, .85),
+  star = ifelse(score>=c85,"actor","non-actor")
+)
+
+star_is_born %>% 
+  ggplot(aes(x = talent, y = beauty)) +
+  geom_point(size = 1, alpha = 0.5) + xlim(-4, 4) + ylim(-4, 4) + 
+  geom_smooth(method = 'lm', se = FALSE) + 
+  theme_minimal() +
+  labs(title = "Everyone")
+```
+
+## Colisor -- ilustração 1
+### Só os 85% mais talentosos **ou** mais bonitos viram atores
+
+```{r}
+star_is_born %>% 
+  ggplot(aes(x = talent, y = beauty, color = factor(star))) +
+  geom_point(size = 1, alpha = 0.25) + xlim(-4, 4) + ylim(-4, 4) + 
+  # geom_smooth(method = 'lm', se = FALSE) + 
+  theme_minimal() +
+  labs(title = "Actors vs Non-actors") +
+  scale_color_discrete(name = "")
+```
+
+## Colisor -- ilustração 1
+### Cria um **viés de seleção** entre os atores e entre os não atores!
+
+```{r}
+star_is_born %>% 
+  ggplot(aes(x = talent, y = beauty, color = factor(star))) +
+  geom_point(size = 1, alpha = 0.25) + xlim(-4, 4) + ylim(-4, 4) + 
+  geom_smooth(method = 'lm', se = FALSE) + 
+  theme_minimal() +
+  labs(title = "Actors vs Non-actors") +
+  scale_color_discrete(name = "")
+```
+
+
+
+## Colisor -- ilustração 2
+### Seleção de propostas em edital de fomento por pontencial de **impacto** e **rigor** científico
+
+```{r}
+set.seed(3)
+
+grant <- tibble(
+  impacto = rnorm(2500),
+  rigor = rnorm(2500),
+  score = impacto + rigor,
+  c85 = quantile(score, .85),
+  aprovado = ifelse(score>=c85,"aprovado","reprovado")
+  )
+
+grant %>% 
+  ggplot(aes(x = impacto, y = rigor)) +
+  geom_point(size = 1, alpha = 0.5) + xlim(-4, 4) + ylim(-4, 4) + 
+  geom_smooth(method = 'lm', se = FALSE) + 
+  theme_minimal() +
+  labs(title = "Todas submissões")
+```
+
+## Colisor -- ilustração 2
+### Os 85% melhores são selecionados
+
+```{r}
+grant %>% 
+  ggplot(aes(x = impacto, y = rigor, color = factor(aprovado))) +
+  geom_point(size = 1, alpha = 0.25) + xlim(-4, 4) + ylim(-4, 4) + 
+  # geom_smooth(method = 'lm', se = FALSE) + 
+  theme_minimal() +
+  labs(title = "Aprovados vs Reprovados") +
+  scale_color_discrete(name = "")
+```
+
+## Colisor -- ilustração 2
+### Cria um **viés de seleção** entre os selecionados e entre os não selecionados!
+
+```{r}
+grant %>% 
+  ggplot(aes(x = impacto, y = rigor, color = factor(aprovado))) +
+  geom_point(size = 1, alpha = 0.25) + xlim(-4, 4) + ylim(-4, 4) + 
+   geom_smooth(method = 'lm', se = FALSE) + 
+  theme_minimal() +
+  labs(title = "Aprovados vs Reprovados") +
+  scale_color_discrete(name = "")
+```
+
+<!-- ==================================================================== -->
+<!--                       Descendente                                    -->
+<!-- ==================================================================== -->
+
+# Descendente (*Descendant*) {background-color="#e5b8a6"}
+
+## Descendente 
+
+![](figs/dagitty_descendant.png){height=2in}
+
+- Pode haver um descendente em qualquer variável
+- Neste caso (de *pipe*/mediador), X causa Y por meio de Z
+- Como Z causa A, a associação de X e Y diminui com a estratificação por A
+  - [Não estratifique!]{.fg style="--col: #e64173"}
+
+## Descendente
+
+```{r}
+set.seed(123)
+```
+
+
+::: columns
+::: {.column width="50%"}
+
+```{r}
+#| echo: true
+n = 1000
+x = rbernoulli(n, 0.5)
+z = rbernoulli(n, (1-x)*0.1 + x*0.9)
+y = rbernoulli(n, (1-z)*0.1 + z*0.9)
+a = rbernoulli(n, (1-z)*0.1 + z*0.9)
+
+table(x,y)
+```
+
+:::  {.fragment}
+
+</br>
+
+```{r}
+#| echo: true
+cor(x,y)
+```
+
+:::
+:::
+
+::: {.column width="50%"}
+
+:::  {.fragment}
+
+```{r}
+#| echo: true
+table(x[a==0], y[a==0])
+table(x[a==1], y[a==1])
+```
+
+:::
+
+:::  {.fragment} 
+
+</br>
+
+```{r}
+#| echo: true
+round(cor(x[a==0], y[a==0]), 3)
+round(cor(x[a==1], y[a==1]), 3)
+```
+
+:::
+:::
+:::
+
+## Descendente -- ilustração
+
+![](figs/dagitty_enjoyment.png){height=3in}
+
+- Método novo causa bons resultados por meio da motivação
+- *Enjoyment* é um subproduto de motivação (um *proxy*) 
+  - condicionar/estratificar por *enjoyment* diminuirá a associação entre método e resultado
+
+## Variáveis de confusão
+
+::: columns
+::: {.column width="50%"}
+
+**Forquilha** -- [Estratifique!]{.fg style="--col: #e64173"}
+
+![](figs/dagitty_fork.png){height=2in}
+
+
+**Colisor** -- [Estratifique!]{.fg style="--col: #e64173"}
+
+![](figs/dagitty_collider.png){height=2in}
+
+
+:::
+
+::: {.column width="50%"}
+
+**Mediador** -- [Não estratifique!]{.fg style="--col: #e64173"}
+
+![](figs/dagitty_pipe.png){height=1in}
+
+</br>
+
+**Descendente** -- [Não estratifique!]{.fg style="--col: #e64173"}
+
+![](figs/dagitty_descendant.png){layout-valign="bottom" height=2in}
+
+
+:::
+::: 
+
+
+## Modelos de causalidade
+### Amantar reduz doenças na infância?
+
+![](figs/amamentar1.png){}
+
+## Modelos de causalidade
+### Amantar reduz doenças na infância?
+
+![](figs/amamentar2.png){}
+
+## Modelos de causalidade
+### Amantar reduz doenças na infância?
+
+![](figs/amamentar3.png){}
+
+## Modelos de causalidade
+### Amantar reduz doenças na infância?
+
+![](figs/amamentar4.png){}
+
+
+:::{style="font-size: 0.5em"}
+
+From: <https://health.ucdavis.edu/media-resources/ctsc/documents/pdfs/directed-acyclic-graphs20220209.pdf>
+
+:::
+
+## Modelos de causalidade
+### O que causa aprender uma L2?
+
+![](figs/dagitty-aquis6.png){}
+
+## Modelos de causalidade
+### O que causa aprender uma L2?
+
+![](figs/dagitty-aquis5.png){}
+
+## Modelos de causalidade
+### O que causa aprender uma L2?
+
+![](figs/dagitty-aquis4.png){}
+
+## Modelos de causalidade
+### O que causa aprender uma L2?
+
+![](figs/dagitty-aquis3.png){}
+
+## Modelos de causalidade
+### O que causa aprender uma L2?
+
+![](figs/dagitty-aquis2.png){}
+
+## Modelos de causalidade
+### O que causa aprender uma L2?
+
+![](figs/dagitty-aquis1.png){}
+
+# **O que fazer???** {background-color="#e64173"}
+
+## O que fazer?
+
+:::{.incremental}
+0. **Estudar, estudar, estudar!**
+1. **Esboçar um modelo de causalidade (modelo científico)** para
+  a) refletir sobre causalidades do seu fenômeno
+  b) controlar variáveis de confusão
+2. **Incluir incerteza/dúvida nos seus resultados**
+  a) na redação dos resultados
+  b) com intervalos nas análises quantitativas
+  c) com múltiplos parâmetros (conhecimento prévio, intervalos [de confiança/credibilidade], distribuições, tamanho de efeito, poder estatístico, etc.) 
+:::
+
+
+## Estatística bayesiana
+### Dados simulados
+
+```{.r}
+bilíngue1 = rbeta(100,8,2)
+bilíngue2 = rbeta(100,8.2,2)
+bilíngue3 = rbeta(100,8.2,1.5)
+trilíngue1 = rbeta(100,9,2)
+trilíngue2 = rbeta(100,9.1,2)
+trilíngue3 = rbeta(100,9,1) 
+```
+
+![](figs/1.hist.png){}
+
+##
+
+![](figs/2.boxplots.png){}
+
+## Modelo de regressão linear frequentista
+
+```{.r}
+lm(simdata, nota ~ grupo + tempo)
+```
+
+</br>
+
+| Predictor          | Estimates   | CI            | p      |
+|--------------------|:-----------:|:-------------:|:------:|
+| (Intercept)        | 0.79        | 0.78 -- 0.81  | **<0.001** |
+| grupo[trilingue]   | 0.03        | 0.01 -- 0.04  | **0.002**  |
+| tempo[2]           | 0.01        | -0.01 -- 0.03 | 0.253  |
+| tempo[3]           | 0.07        | 0.04 -- 0.09  | **<0.001** |
+|---|---|---|---|
+| Observations       | 600         
+| Rˆ2 / Rˆ2 adjusted | 0.079/0.075 
+
+
+## Modelo de regressão linear bayesiano
+
+```{.r}
+brms::brm(simdata,
+          nota ~ grupo + tempo,
+          priors = c(prior(normal(0.83, 0.1), class = Intercept),
+                     prior(normal(0, 0.1), class = b),
+                     prior(normal(0, 0.01), class = sigma)))
+```
+
+</br>
+
+| Predictor          | Estimates   | CI (95%)
+|--------------------|:-----------:|:-------------:|
+| (Intercept)        | 0.79        | 0.78 -- 0.81  |
+| grupo[trilingue]   | 0.03        | 0.01 -- 0.04  |
+| tempo[2]           | 0.01        | -0.01 -- 0.03 |
+| tempo[3]           | 0.07        | 0.05 -- 0.09  |
+|---|---|---|---|
+| Observations       | 600         
+| Rˆ2 Bayes          | 0.082
+
+## *Priors* (distribuições a priori)
+
+::: {layout-ncol=2}
+![](figs/5.freq-prior.png){height=4in}
+
+![](figs/7.informed-prior.png){height=4in}
+
+:::
+
+## *Posterior* (distribuição a posteriori)
+
+![](figs/4.posterior-simulated.png){}
+
+## *Posterior* (distribuição a posteriori)
+### Com procentagem dentro da **ROPE** (*Region of Practical Equivalence*)
+
+![](figs/8.posterior-rope.png){}
+
+## Valores previstos pelo modelo **frequentista**:
+
+![](figs/3.predicted-freq.png){}
+
+## Valores previstos pelo modelo **bayesiano**:
+
+![](figs/9.predicted-bayes.png){}
+
+## Exemplos reais
+
+![Kupske, F. F., Lima Jr, R. M., & Alves, U. K. (2023). A comparison between Full Time Equivalent and Length of Residence as measurements of time in bilingual speech research: the case of first language attrition. *Ilha do Desterro*, 76(3), 177-198.](figs/4.predicted-p.png){}
+
+## Exemplos reais
+
+![LIMA JR, R. M. (2022). A dynamic account of the development of English (L2) vowels by Brazilian learners through communicative teaching and through explicit instruction. In: Alves & Albuquerque. Second Language Pronunciation: Different Approaches to Teaching and Training, Berlin: De Gruyter Mouton, 147-166.](figs/individual-predicted-values.png){}
+
+## Exemplos reais
+
+::: {layout-ncol=2}
+![](figs/gam-mahalDist-bayes-e-points.png){height=4in}
+
+![](figs/gam-mahalDist-bayes-o-points.png){height=4in}
+
+:::
+
+Lima Jr. & Alves (*prelo*)
+
+
+## {background-image="figs/sweating.gif" background-size="contain"}
+
+##
+
+:::columns
+::: {.column width="50%"}
+
+![](figs/QRCode.png){fig-align="center"}
+
+:::
+
+::: {.column width="50%"}
+
+[ronaldolimajr.github.io]()
+
+[ronaldo.junior@unb.br]()
+
+[@ronaldolimajunior](www.instagram.com/ronaldolimajunior)
+
+:::
+:::
