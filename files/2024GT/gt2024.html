@@ -459,19 +459,34 @@ Ronaldo Lima Jr.
 <section id="section-6" class="title-slide slide level1 center" data-background-color="#c4d7e0">
 <h1></h1>
 <div style="font-size: 2em">
+<p>Correlações espúrias</p>
+</div>
+<p>mas também</p>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+</section></section>
+<section>
+<section id="section-8" class="title-slide slide level1 center" data-background-color="#c4d7e0">
+<h1></h1>
+<div style="font-size: 2em">
 <p>“Todos os modelos são errados, mas alguns são úteis”</p>
 </div>
 <p>(George E. P. Box)</p>
 </section>
-<section id="section-7" class="slide level2 center">
+<section id="section-9" class="slide level2">
 <h2></h2>
+<center>
+<div>
 <p>Dados reais</p>
 <p><span class="math inline">\(\Downarrow\)</span></p>
 <p>modelo (científico/estatístico)</p>
 <p><span class="math inline">\(\Downarrow\)</span></p>
 <p>estimativa do mundo real</p>
+</div>
+</center>
 </section>
-<section id="section-8" class="slide level2">
+<section id="section-10" class="slide level2">
 <h2></h2>
 <div class="quarto-layout-panel" data-layout-ncol="3">
 <div class="quarto-layout-row">
@@ -479,7 +494,7 @@ Ronaldo Lima Jr.
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="figs/recipe1.png"></p>
-<figcaption>dados reais</figcaption>
+<figcaption>mundo real</figcaption>
 </figure>
 </div>
 </div>
@@ -487,7 +502,7 @@ Ronaldo Lima Jr.
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="figs/recipe2.png" data-layout-valign="bottom"></p>
-<figcaption>modelo</figcaption>
+<figcaption>dados + modelo</figcaption>
 </figure>
 </div>
 </div>
@@ -502,7 +517,7 @@ Ronaldo Lima Jr.
 </div>
 </div>
 </section>
-<section id="section-9" class="slide level2" data-background-iframe="https://revista.abralin.org/index.php/abralin/article/view/1790">
+<section id="section-11" class="slide level2" data-background-iframe="https://revista.abralin.org/index.php/abralin/article/view/1790">
 <h2></h2>
 </section>
 <section id="observação-de-estrelas" class="slide level2">
@@ -525,7 +540,7 @@ Ronaldo Lima Jr.
 <span id="cb1-15"><a href=""></a></span>
 <span id="cb1-16"><a href=""></a><span class="fu">summary</span>(<span class="fu">lm</span>(y <span class="sc">~</span> x1<span class="sc">+</span>x2<span class="sc">+</span>x3<span class="sc">+</span>x4<span class="sc">+</span>x5<span class="sc">+</span>x6<span class="sc">+</span>x7<span class="sc">+</span>x8<span class="sc">+</span>x9<span class="sc">+</span>x10, dsim))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="section-10" class="slide level2" data-background-image="figs/starGazing.gif" data-background-size="contain">
+<section id="section-12" class="slide level2" data-background-image="figs/starGazing.gif" data-background-size="contain">
 <h2></h2>
 </section></section>
 <section id="então-quais-variáveis-incluir" class="title-slide slide level1 center" data-background-color="#e5b8a6">
@@ -538,8 +553,9 @@ Ronaldo Lima Jr.
 <h1>DAGs</h1>
 
 </section>
-<section id="grafos-dirigidos-acíclicos" class="slide level2">
-<h2>Grafos Dirigidos Acíclicos</h2>
+<section id="dag-directed-acyclic-graph" class="slide level2">
+<h2>DAG = <em>Directed Acyclic Graph</em></h2>
+<h3 id="grafo-dirigido-acíclico">Grafo Dirigido Acíclico</h3>
 <div>
 <ul>
 <li class="fragment">Grafo</li>
@@ -551,7 +567,7 @@ Ronaldo Lima Jr.
 </ul>
 </div>
 </section>
-<section id="grafos-dirigidos-acíclicos-1" class="slide level2">
+<section id="grafos-dirigidos-acíclicos" class="slide level2">
 <h2>Grafos Dirigidos Acíclicos</h2>
 <p><br></p>
 <div class="quarto-figure quarto-figure-center">
@@ -560,11 +576,11 @@ Ronaldo Lima Jr.
 </figure>
 </div>
 </section>
-<section id="grafos-dirigidos-acíclicos-2" class="slide level2">
+<section id="grafos-dirigidos-acíclicos-1" class="slide level2">
 <h2>Grafos Dirigidos Acíclicos</h2>
 
 <img data-src="figs/DAG1.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="grafos-dirigidos-acíclicos-3" class="slide level2">
+<section id="grafos-dirigidos-acíclicos-2" class="slide level2">
 <h2>Grafos Dirigidos Acíclicos</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -587,15 +603,17 @@ Ronaldo Lima Jr.
 <section id="forquilha" class="slide level2">
 <h2>Forquilha</h2>
 <p><img data-src="figs/dagitty_fork.png" style="height:3in"></p>
+<div class="fragment">
 <ul>
 <li>Há associação entre X e Y, mas</li>
 <li><strong>X não causa Y</strong> (Z causa os dois)</li>
 <li>A associação desaparece quando se estratifica por Z
 <ul>
-<li><span class="fg" style="--col: #e64173">Estratifique!</span></li>
+<li><span class="fg" style="--col: #e64173">Estratifique! (inclua)</span></li>
 </ul></li>
 <li><span class="math inline">\(X \leftarrow Z \rightarrow Y\)</span></li>
 </ul>
+</div>
 </section>
 <section id="forquilha-1" class="slide level2">
 <h2>Forquilha</h2>
@@ -786,7 +804,7 @@ x       FALSE TRUE
 <p><img data-src="figs/dagitty_covid2.png" style="height:4in"></p>
 <div>
 <ul>
-<li class="fragment">Sim! Mas é preciso condicionar/estratificar por Covid para ver o real efeito de tosse sobre dor de garganta</li>
+<li class="fragment">Talvez, mas é preciso condicionar/estratificar por Covid para ver o real efeito de tosse sobre dor de garganta</li>
 </ul>
 </div>
 </section>
@@ -819,15 +837,17 @@ x       FALSE TRUE
 <section id="mediador" class="slide level2">
 <h2>Mediador</h2>
 <p><img data-src="figs/dagitty_pipe.png" style="height:2in"></p>
+<div class="fragment">
 <ul>
 <li><strong>Há</strong> associação entre X e Y</li>
 <li><strong>X causa Y</strong> por meio de Z</li>
 <li>A associação desaparece quando se estratifica por Z
 <ul>
-<li><span class="fg" style="--col: #e64173">Não estratifique!</span></li>
+<li><span class="fg" style="--col: #e64173">Não estratifique! (não inclua)</span></li>
 </ul></li>
 <li><span class="math inline">\(X \rightarrow Z \rightarrow Y\)</span></li>
 </ul>
+</div>
 </section>
 <section id="mediador-1" class="slide level2">
 <h2>Mediador</h2>
@@ -1045,14 +1065,16 @@ x       FALSE TRUE
 <section id="colisor" class="slide level2">
 <h2>Colisor</h2>
 <p><img data-src="figs/dagitty_collider.png" style="height:3in"></p>
+<div class="fragment">
 <ul>
 <li><strong>Não há</strong> associação entre X e Y</li>
-<li>X e Y causam Z e aparece uma associação entre X e Y quando se estratifica por Z
+<li>X e Y causam Z, mas aparece uma associação entre X e Y quando se estratifica por Z
 <ul>
-<li><span class="fg" style="--col: #e64173">Estratifique!</span></li>
+<li><span class="fg" style="--col: #e64173">Não estratifique! (não inclua)</span></li>
 </ul></li>
 <li><span class="math inline">\(X \rightarrow Z \leftarrow Y\)</span></li>
 </ul>
+</div>
 </section>
 <section id="colisor-1" class="slide level2">
 <h2>Colisor</h2>
@@ -1298,14 +1320,16 @@ x       FALSE TRUE
 <section id="descendente" class="slide level2">
 <h2>Descendente</h2>
 <p><img data-src="figs/dagitty_descendant.png" style="height:2in"></p>
+<div class="fragment">
 <ul>
 <li>Pode haver um descendente em qualquer variável</li>
 <li>Neste caso (de <em>pipe</em>/mediador), X causa Y por meio de Z</li>
 <li>Como Z causa A, a associação de X e Y diminui com a estratificação por A
 <ul>
-<li><span class="fg" style="--col: #e64173">Não estratifique!</span></li>
+<li><span class="fg" style="--col: #e64173">Não estratifique! (não inclua)</span></li>
 </ul></li>
 </ul>
+</div>
 </section>
 <section id="descendente-1" class="slide level2">
 <h2>Descendente</h2>
@@ -1387,7 +1411,7 @@ x       FALSE TRUE
 <div class="column" style="width:50%;">
 <p><strong>Forquilha</strong> – <span class="fg" style="--col: #e64173">Estratifique!</span></p>
 <p><img data-src="figs/dagitty_fork.png" style="height:2in"></p>
-<p><strong>Colisor</strong> – <span class="fg" style="--col: #e64173">Estratifique!</span></p>
+<p><strong>Colisor</strong> – <span class="fg" style="--col: #e64173">Não estratifique!</span></p>
 <p><img data-src="figs/dagitty_collider.png" style="height:2in"></p>
 </div><div class="column" style="width:50%;">
 <p><strong>Mediador</strong> – <span class="fg" style="--col: #e64173">Não estratifique!</span></p>
@@ -1480,15 +1504,23 @@ x       FALSE TRUE
 <section id="estatística-bayesiana" class="slide level2">
 <h2>Estatística bayesiana</h2>
 <h3 id="dados-simulados">Dados simulados</h3>
+<div class="columns">
+<div class="column" style="width:40%;">
 <div class="sourceCode" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href=""></a>bilíngue1 <span class="ot">=</span> <span class="fu">rbeta</span>(<span class="dv">100</span>,<span class="dv">8</span>,<span class="dv">2</span>)</span>
 <span id="cb62-2"><a href=""></a>bilíngue2 <span class="ot">=</span> <span class="fu">rbeta</span>(<span class="dv">100</span>,<span class="fl">8.2</span>,<span class="dv">2</span>)</span>
 <span id="cb62-3"><a href=""></a>bilíngue3 <span class="ot">=</span> <span class="fu">rbeta</span>(<span class="dv">100</span>,<span class="fl">8.2</span>,<span class="fl">1.5</span>)</span>
 <span id="cb62-4"><a href=""></a>trilíngue1 <span class="ot">=</span> <span class="fu">rbeta</span>(<span class="dv">100</span>,<span class="dv">9</span>,<span class="dv">2</span>)</span>
 <span id="cb62-5"><a href=""></a>trilíngue2 <span class="ot">=</span> <span class="fu">rbeta</span>(<span class="dv">100</span>,<span class="fl">9.1</span>,<span class="dv">2</span>)</span>
 <span id="cb62-6"><a href=""></a>trilíngue3 <span class="ot">=</span> <span class="fu">rbeta</span>(<span class="dv">100</span>,<span class="dv">9</span>,<span class="dv">1</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-<img data-src="figs/1.hist.png" class="r-stretch"></section>
-<section id="section-11" class="slide level2">
+</div><div class="column" style="width:60%;">
+<p><img data-src="figs/1.hist.png"></p>
+</div>
+</div>
+<div style="font-size: 0.75em">
+<p>Lima Jr.&nbsp;<em>Estatística bayesiana apliacada a estudo de bilinguismo</em> (Kupske, Fontes &amp; Perozzo <em>no prelo</em>)</p>
+</div>
+</section>
+<section id="section-13" class="slide level2">
 <h2></h2>
 
 <img data-src="figs/2.boxplots.png" class="r-stretch"></section>
@@ -1658,10 +1690,10 @@ x       FALSE TRUE
 </div>
 <p>Lima Jr.&nbsp;&amp; Alves (<em>prelo</em>)</p>
 </section>
-<section id="section-12" class="slide level2" data-background-image="figs/sweating.gif" data-background-size="contain">
+<section id="section-14" class="slide level2" data-background-image="figs/sweating.gif" data-background-size="contain">
 <h2></h2>
 </section>
-<section id="section-13" class="slide level2">
+<section id="section-15" class="slide level2">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
