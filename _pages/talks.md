@@ -7,6 +7,8 @@ author_profile: true
 
 ### Talks and Workshops
 
+- 2024 -- [Slides](/files/vsif.pdf){:target="_blank"}: **Proposta de análise bayesiana não linear do desenvolvimento fonético-fonológico de línguas não nativas: o caso das vogais médias do PB de um aprendiz argentino**
+  - V Seminário Internacional de Fonologia (UFRJ)
 - 2024 -- [Slides](/files/2024GT/gt2024.html){:target="_blank"}: **Incerteza e rigor: explorando questões de dedução, intuição e probabilidade na busca científica por causalidades**
   - VI Encontro Intermediário do Grupo de Trabalho de Fonética e Fonologia da ANPOLL
 - 2024 -- [Slides](/files/nasalizacao.pdf){:target="_blank"}: **Nasalização**
