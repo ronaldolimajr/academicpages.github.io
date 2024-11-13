@@ -7,7 +7,7 @@ author_profile: true
 
 ### Scripts de vídeos do YouTube
 
-- [Script](/files/RScripts/pizza.R.pdf){:target="_blank"} do [vídeo](https://youtu.be/3-FxBB2pap4){:target="_blank"} **Diga adeus ao gráfico de pizza**
+- [Script](/files/RScripts/pizza.R){:target="_blank"} do [vídeo](https://youtu.be/3-FxBB2pap4){:target="_blank"} **Diga adeus ao gráfico de pizza**
 
 ### Quatitative data analysis for linguists
 
